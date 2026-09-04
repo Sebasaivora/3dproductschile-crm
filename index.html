@@ -1,0 +1,2113 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="theme-color" content="#0b996e" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 1070 674.16%27%3E%3Cpath fill=%27%230b996e%27 d=%27M487.94,525.98c-1.55,2.35-3.71,4.49-4.56,7.07-25.7,77.54-83.33,115.84-160.14,131.99-70.58,14.84-139.62,12.87-206.5-15.71C41.43,617.14-3.81,543.06.25,461.23c.39-7.95,3.08-10.65,10.9-10.62,45.48.22,90.96.31,136.43-.08,8.48-.07,11.85,3.49,13.03,10.97,1.08,6.86,1.81,13.83,3.53,20.54,7.92,30.83,31.9,50.81,63.99,52.58,13.36.73,27.23,1.62,40.17-.99,39.49-7.97,54.69-39.11,51.09-73.71-3.78-36.26-20.59-51.48-57.65-55.75-14.71-1.69-29.42-3.55-44.18-4.73-7.42-.59-9.67-4.21-9.64-11,.12-34.06.19-68.12-.04-102.18-.06-8.69,4.17-11.07,12.04-11.62,16.06-1.12,32.24-2.03,48.05-4.84,34.06-6.05,53.61-29.59,52.53-61.46-1.31-38.6-22.25-64.4-57.22-68.3-14.09-1.57-28.89-1.76-42.76.74-34.69,6.25-55.33,29.5-59.01,65.72-1.4,13.77-6.61,18.09-20.44,17.8-41.96-.87-83.96-.66-125.93-.09-11.4.15-14.95-3.18-14.98-14.81C-.15,120.78,47.22,47.79,131.53,19.36c85.58-28.86,171.96-25.91,255.2,11.91,48.7,22.12,81.03,59.6,96.55,111.09.92,3.05,2.36,5.94,3.56,8.91,1.11-.07,2.22-.15,3.33-.22.33-4.37.93-8.75.94-13.12.07-39.74.31-79.48-.14-119.21-.11-9.96,2.41-13.8,13.19-13.73,80.45.48,160.96-1.5,241.35.86,145.43,4.26,264.75,86.61,305.65,220.7,41.34,135.55,16.01,257.16-89.28,356.91-46.02,43.6-102.6,67.47-164.75,77.18-26.16,4.09-52.97,5.24-79.5,5.51-70.4.73-140.81-.02-211.2.5-12.06.09-15.78-3.29-15.54-15.45.75-36.66.27-73.35.27-110.03,0-4.72,0-9.45,0-14.17-1.07-.34-2.14-.69-3.21-1.03ZM673.49,337.13c0,48.04-.02,96.08,0,144.12.01,19.2.06,19.22,18.52,19.25,15.31.02,30.63.45,45.92-.1,29.47-1.06,56.94-9,80.69-26.91,58.01-43.74,77.87-103.65,64.58-172.46-12.77-66.14-53.03-111.46-121.24-125.65-22.33-4.65-46.03-3.1-69.12-3.68-19.06-.48-19.32.15-19.34,18.7-.04,48.91-.01,97.82-.02,146.74ZM417,335.5c16.84,13.77,34.06,24.24,46.29,38.87,11.94,14.27,18.81,32.79,28.83,51.16,8.21-42.15,33.09-69.89,75.35-88.19-42.91-17.75-67.12-47.02-77.58-89.26-10.12,42.8-36,70.36-72.91,87.43Z%27/%3E%3C/svg%3E" />
+<title>3D Products Chile CRM</title>
+<meta name="description" content="CRM de 3D Products Chile: contactos, pipeline, actividades y Google Calendar." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" />
+
+<style>
+  /* ============ TOKENS ============ */
+  :root {
+    --bg: #f6f7f9;
+    --surface: #ffffff;
+    --surface-2: #f6f7f9;
+    --ink: #0f2135;
+    --ink-soft: #3a4652;
+    --muted: #69737d;
+    --faint: #99a2ac;
+    --border: #eceef1;
+    --border-strong: #dfe3e7;
+
+    --accent: #0b996e;
+    --accent-hover: #0a875f;
+    --accent-tint: #e6f4ee;
+    --accent-ink: #076a4b;
+
+
+    --ok: #12894d;   --ok-bg: #e4f3ea;
+    --warn: #b06a12; --warn-bg: #fbeedd;
+    --bad: #cf3a3f;  --bad-bg: #fbe9ea;
+    --info: #2f6bd8; --info-bg: #e8eefb;
+    --violet: #7a4ddb; --violet-bg: #f1ecfb;
+    --slate: #607285; --slate-bg: #edf0f3;
+
+    --shadow-sm: 0 1px 2px rgba(15, 33, 53, .05);
+    --shadow-md: 0 16px 40px -16px rgba(15, 33, 53, .16), 0 2px 8px rgba(15, 33, 53, .05);
+    --radius: 12px;
+    --radius-sm: 8px;
+
+    --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "Segoe UI", Roboto, sans-serif;
+    --heading: "Montserrat", -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "Menlo", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b1218;
+      --surface: #121b23;
+      --surface-2: #0e161d;
+      --ink: #eef2f5;
+      --ink-soft: #c7cfd6;
+      --muted: #8b959e;
+      --faint: #6a747d;
+      --border: #212e37;
+      --border-strong: #2e3c46;
+
+      --accent: #1fbf88;
+      --accent-hover: #34cd99;
+      --accent-tint: #123528;
+      --accent-ink: #6fe7c1;
+
+
+      --ok: #46c07d;   --ok-bg: #163220;
+      --warn: #dc9a4d; --warn-bg: #342612;
+      --bad: #e5686c;  --bad-bg: #35201f;
+      --info: #6f9bef; --info-bg: #1a2647;
+      --violet: #a281ea; --violet-bg: #251b3e;
+      --slate: #92a0b0; --slate-bg: #202b35;
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, .32);
+      --shadow-md: 0 18px 44px -18px rgba(0, 0, 0, .6), 0 2px 10px rgba(0, 0, 0, .32);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0b1218;
+    --surface: #121b23;
+    --surface-2: #0e161d;
+    --ink: #eef2f5;
+    --ink-soft: #c7cfd6;
+    --muted: #8b959e;
+    --faint: #6a747d;
+    --border: #212e37;
+    --border-strong: #2e3c46;
+
+    --accent: #1fbf88;
+    --accent-hover: #34cd99;
+    --accent-tint: #123528;
+    --accent-ink: #6fe7c1;
+
+
+    --ok: #46c07d;   --ok-bg: #163220;
+    --warn: #dc9a4d; --warn-bg: #342612;
+    --bad: #e5686c;  --bad-bg: #35201f;
+    --info: #6f9bef; --info-bg: #1a2647;
+    --violet: #a281ea; --violet-bg: #251b3e;
+    --slate: #92a0b0; --slate-bg: #202b35;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, .32);
+    --shadow-md: 0 18px 44px -18px rgba(0, 0, 0, .6), 0 2px 10px rgba(0, 0, 0, .32);
+  }
+
+  /* ============ BASE ============ */
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  img { max-width: 100%; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { margin: 0; font-family: var(--heading); font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
+  button { font-family: inherit; cursor: pointer; }
+  input, select, textarea { font-family: inherit; font-size: 14px; }
+  a { color: var(--accent); }
+  ::selection { background: var(--accent-tint); color: var(--accent-ink); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
+
+  /* ============ SHELL ============ */
+  .app {
+    display: grid;
+    grid-template-columns: 244px 1fr;
+    min-height: 100vh;
+  }
+
+  .sidebar {
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 18px 12px;
+    gap: 1px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 10px 20px;
+  }
+  .brand-mark {
+    height: 30px; width: auto; flex: none;
+    display: flex; align-items: center;
+    color: var(--accent);
+    font-weight: 800; font-size: 15px; letter-spacing: -0.03em;
+  }
+  .brand-mark svg { height: 100%; width: auto; display: block; }
+  .brand-mark img { height: 100%; width: auto; display: block; }
+  .brand-name { font-family: var(--heading); font-weight: 700; font-size: 15px; letter-spacing: -0.01em; line-height: 1.15; }
+  .brand-sub { font-size: 10px; color: var(--faint); letter-spacing: .06em; text-transform: uppercase; margin-top: 1px; }
+
+  .nav-label {
+    font-size: 11px; font-weight: 600; letter-spacing: .04em;
+    text-transform: uppercase; color: var(--faint);
+    padding: 16px 12px 7px;
+  }
+  .nav-item {
+    display: flex; align-items: center; gap: 11px;
+    padding: 9px 12px; border-radius: var(--radius-sm);
+    color: var(--ink-soft); text-decoration: none;
+    border: none; background: none; width: 100%; text-align: left;
+    font-size: 13.5px; font-weight: 500;
+    transition: background .12s, color .12s;
+  }
+  .nav-item svg { flex: none; opacity: .65; transition: opacity .12s; }
+  .nav-item:hover { background: var(--surface-2); color: var(--ink); }
+  .nav-item:hover svg { opacity: .9; }
+  .nav-item.active { background: var(--accent-tint); color: var(--accent-ink); font-weight: 600; }
+  .nav-item.active svg { opacity: 1; }
+  .sidebar-foot { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--border); }
+
+  .main { min-width: 0; display: flex; flex-direction: column; }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 20;
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px clamp(16px, 3vw, 40px);
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .topbar h1 { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; }
+  .topbar .spacer { flex: 1; }
+  .search {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 8px 13px;
+    width: 250px; color: var(--muted);
+    transition: border-color .12s, background .12s;
+  }
+  .search:focus-within { border-color: var(--accent); background: var(--surface); }
+  .search input { border: none; background: none; outline: none; color: var(--ink); width: 100%; }
+  .search input::placeholder { color: var(--faint); }
+
+  .content { padding: 26px clamp(16px, 3vw, 40px) 80px; width: 100%; max-width: none; }
+
+  .hamburger { display: none; background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 8px; color: var(--ink); }
+
+  /* ============ BUTTONS ============ */
+  .btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 9px 15px; border-radius: var(--radius-sm);
+    border: 1px solid var(--border-strong); background: var(--surface);
+    color: var(--ink); font-size: 13px; font-weight: 600;
+    transition: background .12s, border-color .12s, transform .06s;
+  }
+  .btn:hover { background: var(--surface-2); }
+  .btn:active { transform: translateY(1px); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+  .btn.ghost { border-color: transparent; background: transparent; }
+  .btn.ghost:hover { background: var(--surface-2); }
+  .btn.danger { color: var(--bad); border-color: transparent; background: transparent; }
+  .btn.danger:hover { background: var(--bad-bg); }
+  .btn.sm { padding: 6px 11px; font-size: 12px; }
+  .btn:disabled { opacity: .5; cursor: not-allowed; }
+
+  .menu-wrap { position: relative; }
+  .menu {
+    position: absolute; right: 0; top: calc(100% + 6px);
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); box-shadow: var(--shadow-md);
+    padding: 6px; min-width: 190px; z-index: 40;
+  }
+  .menu button {
+    display: flex; align-items: center; gap: 9px; width: 100%;
+    padding: 8px 10px; border: none; background: none; border-radius: 7px;
+    color: var(--ink); font-size: 13px; font-weight: 500; text-align: left;
+  }
+  .menu button:hover { background: var(--surface-2); }
+
+  /* ============ CARDS / SECTIONS ============ */
+  .view { display: none; animation: fade .18s ease both; }
+  .view.active { display: block; }
+  @keyframes fade { from { opacity: 0; transform: translateY(4px); } }
+
+  .greet { margin: 2px 0 22px; }
+  .greet-title { font-size: 25px; font-weight: 700; letter-spacing: -0.02em; color: var(--ink); }
+  .greet-sub { color: var(--muted); font-size: 13px; margin-top: 4px; }
+
+  .section-head { display: flex; align-items: baseline; gap: 10px; margin: 26px 0 12px; }
+  .section-head h2 { font-size: 15px; }
+  .section-head .count { font-size: 12px; font-weight: 600; color: var(--faint); }
+
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px;
+  }
+
+  .grid-kpi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  .kpi { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+  .kpi .k-label { font-size: 12px; font-weight: 600; color: var(--muted); }
+  .kpi .k-value { font-family: var(--heading); font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-top: 10px; font-variant-numeric: tabular-nums; color: var(--ink); }
+  .kpi .k-note { font-size: 12px; color: var(--faint); margin-top: 4px; }
+  .kpi .k-note strong { color: var(--accent); font-weight: 600; }
+
+  .grid-2 { display: grid; grid-template-columns: 1.15fr .85fr; gap: 12px; align-items: start; }
+
+  /* ============ TABLE ============ */
+  .table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    text-align: left; font-size: 11px; font-weight: 600;
+    letter-spacing: .02em; color: var(--muted);
+    padding: 12px 18px; border-bottom: 1px solid var(--border);
+    background: var(--surface-2);
+  }
+  tbody td { padding: 13px 18px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr { transition: background .1s; }
+  tbody tr.clickable:hover { background: var(--surface-2); cursor: pointer; }
+  .cell-main { font-weight: 600; color: var(--ink); }
+  .cell-sub { font-size: 12px; color: var(--faint); }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  /* ============ CHIPS / BADGES / AVATAR ============ */
+  .avatar {
+    width: 30px; height: 30px; border-radius: 50%; flex: none;
+    display: grid; place-items: center; font-size: 11px; font-weight: 700;
+    background: var(--accent-tint); color: var(--accent-ink);
+  }
+  .avatar.lg { width: 44px; height: 44px; font-size: 15px; }
+  .tag {
+    display: inline-flex; align-items: center;
+    padding: 2px 8px; border-radius: 999px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    font-size: 11.5px; color: var(--muted); font-weight: 500;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 9px; border-radius: 999px;
+    font-size: 11.5px; font-weight: 600; white-space: nowrap;
+  }
+  .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .badge.s-nuevo { color: var(--slate); background: var(--slate-bg); }
+  .badge.s-contactado { color: var(--info); background: var(--info-bg); }
+  .badge.s-propuesta { color: var(--violet); background: var(--violet-bg); }
+  .badge.s-negociacion { color: var(--warn); background: var(--warn-bg); }
+  .badge.s-ganado { color: var(--ok); background: var(--ok-bg); }
+  .badge.s-perdido { color: var(--bad); background: var(--bad-bg); }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 7px 13px; border-radius: 999px; font-size: 12px; font-weight: 600;
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--muted);
+  }
+  .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--faint); }
+  .pill.on { border-color: color-mix(in srgb, var(--accent) 40%, var(--border)); background: var(--accent-tint); color: var(--accent-ink); }
+  .pill.on .dot { background: var(--accent); }
+
+  /* ============ DASHBOARD LISTS ============ */
+  .list { display: flex; flex-direction: column; }
+  .row-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 4px; border-bottom: 1px solid var(--border);
+  }
+  .row-item:last-child { border-bottom: none; }
+  .row-item .ri-body { min-width: 0; flex: 1; }
+  .row-item .ri-title { font-weight: 600; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-item .ri-meta { font-size: 12px; color: var(--faint); }
+  .row-item .ri-time { font-size: 11.5px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+
+  .type-ic {
+    width: 28px; height: 28px; border-radius: 8px; flex: none;
+    display: grid; place-items: center; color: var(--muted);
+    background: var(--surface-2); border: 1px solid var(--border);
+  }
+  .type-ic.llamada { color: var(--info); }
+  .type-ic.reunion { color: var(--violet); }
+  .type-ic.email { color: var(--accent); }
+  .type-ic.tarea { color: var(--warn); }
+
+  /* ============ CHART ============ */
+  .chart { width: 100%; height: 210px; display: block; }
+  .chart text { font-family: var(--sans); }
+
+  /* ============ KANBAN ============ */
+  .kanban { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 12px; }
+  .kcol {
+    flex: 0 0 260px; background: var(--surface-2);
+    border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 10px; display: flex; flex-direction: column; gap: 9px;
+  }
+  .kcol.drop { border-color: var(--accent); background: var(--accent-tint); }
+  .kcol-head { display: flex; align-items: center; justify-content: space-between; padding: 4px 4px 2px; }
+  .kcol-head .kt { font-size: 12px; font-weight: 700; letter-spacing: .02em; }
+  .kcol-head .ks { font-size: 11px; font-weight: 500; color: var(--muted); }
+  .deal {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 11px 12px;
+    box-shadow: var(--shadow-sm); cursor: grab;
+  }
+  .deal:active { cursor: grabbing; }
+  .deal.dragging { opacity: .4; }
+  .deal .d-title { font-weight: 600; font-size: 13px; line-height: 1.35; }
+  .deal .d-foot { display: flex; align-items: center; justify-content: space-between; margin-top: 9px; }
+  .deal .d-val { font-weight: 700; font-size: 12.5px; }
+  .deal .d-contact { font-size: 11.5px; color: var(--faint); display: flex; align-items: center; gap: 6px; }
+
+  /* ============ ACTIVITIES ============ */
+  .day-group { margin-bottom: 20px; }
+  .day-head { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; padding-left: 2px; }
+  .act {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 8px;
+  }
+  .act.done { opacity: .62; }
+  .act.done .a-title { text-decoration: line-through; text-decoration-color: var(--faint); }
+  .chk {
+    width: 18px; height: 18px; border-radius: 6px; flex: none; margin-top: 1px;
+    border: 1.5px solid var(--border-strong); background: var(--surface);
+    display: grid; place-items: center; color: #fff;
+  }
+  .chk.on { background: var(--accent); border-color: var(--accent); }
+  .a-body { flex: 1; min-width: 0; }
+  .a-title { font-weight: 600; font-size: 13.5px; }
+  .a-meta { display: flex; flex-wrap: wrap; gap: 6px 10px; margin-top: 5px; font-size: 12px; color: var(--faint); align-items: center; }
+  .a-meta .mchip { display: inline-flex; align-items: center; gap: 5px; }
+  .g-flag { display: inline-flex; align-items: center; gap: 4px; color: var(--accent); font-weight: 600; font-size: 11.5px; }
+  .a-side { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+  .a-time { font-size: 11.5px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+
+  /* ============ CALENDAR ============ */
+  .cal-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+  .cal-head .cal-month { font-size: 16px; font-weight: 700; min-width: 190px; }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--border); gap: 1px; }
+  .cal-dow { background: var(--surface-2); padding: 8px 10px; font-size: 10.5px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); text-align: left; }
+  .cal-cell { background: var(--surface); min-height: 104px; padding: 7px 8px; display: flex; flex-direction: column; gap: 4px; }
+  .cal-cell.out { background: var(--surface-2); }
+  .cal-cell.today .cal-num { background: var(--accent); color: #fff; }
+  .cal-num { font-size: 11px; font-weight: 600; color: var(--muted); width: 20px; height: 20px; display: grid; place-items: center; border-radius: 6px; }
+  .cal-ev { font-size: 11px; padding: 2px 6px; border-radius: 5px; background: var(--accent-tint); color: var(--accent-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 500; }
+  .cal-ev.g { background: var(--info-bg); color: var(--info); }
+  .cal-ev.done { opacity: .5; }
+  .cal-more { font-size: 10.5px; color: var(--faint); }
+
+  /* ============ DRAWER ============ */
+  .scrim { position: fixed; inset: 0; background: rgba(12, 18, 26, .42); z-index: 60; opacity: 0; pointer-events: none; transition: opacity .16s; }
+  .scrim.on { opacity: 1; pointer-events: auto; }
+  .drawer {
+    position: fixed; top: 0; right: 0; height: 100%; width: 420px; max-width: 92vw;
+    background: var(--surface); border-left: 1px solid var(--border);
+    z-index: 61; transform: translateX(100%); transition: transform .2s ease;
+    display: flex; flex-direction: column; box-shadow: var(--shadow-md);
+  }
+  .drawer.on { transform: none; }
+  .drawer-head { padding: 20px; border-bottom: 1px solid var(--border); display: flex; gap: 13px; align-items: flex-start; }
+  .drawer-body { padding: 20px; overflow-y: auto; flex: 1; }
+  .drawer h4 { font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin: 22px 0 10px; }
+  .drawer h4:first-child { margin-top: 0; }
+  .kv { display: grid; grid-template-columns: 84px 1fr; gap: 4px 12px; font-size: 13px; }
+  .kv dt { color: var(--faint); }
+  .kv dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+  .mini-deal { display: flex; align-items: center; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--border); }
+  .mini-deal:last-child { border-bottom: none; }
+
+  /* ============ MODAL ============ */
+  .modal-card {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -46%);
+    width: 460px; max-width: 92vw; max-height: 88vh; overflow-y: auto;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 20px; box-shadow: var(--shadow-md); z-index: 61;
+    opacity: 0; pointer-events: none; transition: opacity .15s, transform .15s;
+  }
+  .modal-card.on { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%); }
+  .modal-head { padding: 18px 20px; border-bottom: 1px solid var(--border); font-size: 15px; font-weight: 700; }
+  .modal-body { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .modal-foot { padding: 14px 20px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 8px; }
+  .field { display: flex; flex-direction: column; gap: 5px; }
+  .field label { font-size: 12px; font-weight: 600; color: var(--ink-soft); }
+  .field input, .field select, .field textarea {
+    padding: 10px 13px; border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm); background: var(--surface); color: var(--ink);
+    outline: none; transition: border-color .12s, box-shadow .12s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-tint); }
+  .field textarea { resize: vertical; min-height: 66px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  /* ============ TOASTS ============ */
+  .toasts { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 90; display: flex; flex-direction: column; gap: 8px; align-items: center; }
+  .toast {
+    background: var(--ink); color: var(--bg);
+    padding: 10px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;
+    box-shadow: var(--shadow-md); animation: pop .2s ease both;
+  }
+  @keyframes pop { from { opacity: 0; transform: translateY(8px); } }
+
+  /* ============ SETTINGS ============ */
+  .set-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 14px; max-width: 620px; }
+  .set-card h3 { font-size: 14px; margin-bottom: 4px; }
+  .set-card p.desc { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+  .status-line { display: flex; align-items: center; gap: 9px; padding: 11px 13px; border-radius: var(--radius-sm); background: var(--surface-2); border: 1px solid var(--border); font-size: 13px; font-weight: 500; margin-bottom: 14px; }
+  .status-line .sd { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .status-line.ok .sd { background: var(--ok); }
+  .status-line.off .sd { background: var(--faint); }
+  .status-line.warn .sd { background: var(--warn); }
+  details.help { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0 13px; margin-top: 12px; }
+  details.help summary { padding: 11px 0; font-weight: 600; font-size: 13px; cursor: pointer; }
+  details.help ol { margin: 0 0 14px; padding-left: 20px; color: var(--ink-soft); font-size: 13px; line-height: 1.7; }
+  details.help code { font-family: var(--mono); font-size: 12px; background: var(--surface-2); padding: 1px 5px; border-radius: 4px; }
+  .seg { display: inline-flex; border: 1px solid var(--border-strong); border-radius: var(--radius-sm); overflow: hidden; }
+  .seg button { padding: 7px 14px; border: none; background: var(--surface); color: var(--muted); font-size: 12.5px; font-weight: 600; border-right: 1px solid var(--border); }
+  .seg button:last-child { border-right: none; }
+  .seg button.on { background: var(--accent-tint); color: var(--accent-ink); }
+
+  .empty { text-align: center; color: var(--faint); padding: 40px 20px; font-size: 13px; }
+
+  .banner {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--accent-tint); color: var(--accent-ink);
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+    border-radius: var(--radius-sm); padding: 10px 14px; font-size: 12.5px; font-weight: 500;
+    margin-bottom: 18px;
+  }
+  .banner button { margin-left: auto; }
+
+  /* ============ RESPONSIVE ============ */
+  .table-wrap { overflow-x: auto; }
+  table { min-width: 560px; }
+
+  @media (max-width: 1200px) {
+    .grid-2 { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 1000px) {
+    .grid-kpi { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 860px) {
+    .app { grid-template-columns: 1fr; }
+    .sidebar {
+      position: fixed; z-index: 70; width: 244px; left: 0; top: 0;
+      transform: translateX(-100%); transition: transform .2s ease;
+    }
+    .sidebar.on { transform: none; }
+    .hamburger { display: inline-flex; }
+    .search { width: 150px; }
+    .topbar { padding: 12px 16px; gap: 10px; }
+    #newBtn span, #newBtn { font-size: 12px; }
+  }
+  @media (max-width: 620px) {
+    .topbar { flex-wrap: wrap; }
+    .topbar h1 { font-size: 16px; }
+    .search { display: none; }
+    .section-head { flex-wrap: wrap; }
+    .grid-kpi { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .kpi .k-value { font-size: 22px; }
+    .drawer { width: 100%; max-width: 100%; }
+    .modal-card { width: 100%; max-width: 100%; border-radius: 16px 16px 0 0; top: auto; bottom: 0; transform: translate(-50%, 100%); left: 50%; }
+    .modal-card.on { transform: translate(-50%, 0); }
+    .field-row { grid-template-columns: 1fr; }
+    .cal-cell { min-height: 76px; }
+    .cal-ev { font-size: 10px; }
+    .auth-card { padding: 20px; }
+  }
+  @media (max-width: 420px) {
+    .grid-kpi { grid-template-columns: 1fr; }
+  }
+
+  /* ============ THEME TOGGLE ============ */
+  .icon-btn {
+    display: inline-grid; place-items: center;
+    width: 36px; height: 36px; border-radius: 999px;
+    border: 1px solid var(--border); background: var(--surface-2); color: var(--ink-soft);
+    transition: background .12s, color .12s, border-color .12s;
+  }
+  .icon-btn:hover { background: var(--surface); border-color: var(--border-strong); color: var(--ink); }
+
+  /* ============ AUTH ============ */
+  .auth {
+    position: fixed; inset: 0; z-index: 100;
+    background: var(--bg); color: var(--ink);
+    display: grid; place-items: center; padding: 24px; overflow-y: auto;
+  }
+  .auth-inner { width: 400px; max-width: 100%; }
+  .auth-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; padding-left: 2px; }
+  .auth-brand .brand-mark { height: 40px; }
+  .auth-brand .brand-name { font-size: 18px; }
+  .auth-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 18px; box-shadow: var(--shadow-md); padding: 26px;
+  }
+  .auth-card h2 { font-size: 17px; margin-bottom: 4px; }
+  .auth-card .sub { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
+  .auth-tabs { display: flex; gap: 4px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 4px; margin-bottom: 18px; }
+  .auth-tabs button { flex: 1; padding: 8px; border: none; background: none; border-radius: 7px; font-weight: 600; font-size: 13px; color: var(--muted); font-family: inherit; }
+  .auth-tabs button.on { background: var(--surface); color: var(--ink); box-shadow: var(--shadow-sm); }
+  .auth-form { display: flex; flex-direction: column; gap: 13px; }
+  .auth-err { color: var(--bad); font-size: 12.5px; min-height: 1.1em; font-weight: 500; }
+  .auth-hint { text-align: center; font-size: 12px; color: var(--faint); margin-top: 16px; }
+  .auth-hint code { font-family: var(--mono); background: var(--surface-2); padding: 1px 5px; border-radius: 4px; color: var(--ink-soft); }
+  .auth-toprow { display: flex; justify-content: flex-end; margin-bottom: 10px; }
+
+  .me-box { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: var(--radius-sm); }
+  .me-box .me-info { min-width: 0; flex: 1; }
+  .me-box .me-name { font-weight: 600; font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .me-box .me-mail { font-size: 11px; color: var(--faint); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .me-box .me-out { border: none; background: none; color: var(--faint); padding: 4px; border-radius: 6px; display: grid; place-items: center; }
+  .me-box .me-out:hover { background: var(--surface-2); color: var(--bad); }
+
+  .emp-row { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .emp-row:last-child { border-bottom: none; }
+  .emp-row .emp-id { font-size: 11.5px; color: var(--muted); }
+  .emp-row .you { font-size: 10.5px; font-weight: 700; color: var(--accent-ink); background: var(--accent-tint); padding: 1px 6px; border-radius: 999px; }
+</style>
+
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="brand-mark" id="brandMarkSide">3D</div>
+      <div>
+        <div class="brand-name">3D Products Chile</div>
+        <div class="brand-sub">CRM</div>
+      </div>
+    </div>
+
+    <div class="nav-label">Trabajo</div>
+    <button class="nav-item" data-nav="dashboard">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="1.5" width="5.5" height="6.5" rx="1.4" fill="currentColor"/><rect x="1.5" y="10" width="5.5" height="4.5" rx="1.4" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="1.5" width="5.5" height="4.5" rx="1.4" stroke="currentColor" stroke-width="1.5"/><rect x="9" y="8" width="5.5" height="6.5" rx="1.4" fill="currentColor"/></svg>
+      Panel
+    </button>
+    <button class="nav-item" data-nav="contacts">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5" r="3" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 14c0-3 2.5-4.5 5.5-4.5s5.5 1.5 5.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Contactos
+    </button>
+    <button class="nav-item" data-nav="pipeline">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="2" width="3.5" height="12" rx="1.2" stroke="currentColor" stroke-width="1.5"/><rect x="6.25" y="2" width="3.5" height="8" rx="1.2" fill="currentColor"/><rect x="11" y="2" width="3.5" height="5" rx="1.2" stroke="currentColor" stroke-width="1.5"/></svg>
+      Pipeline
+    </button>
+    <button class="nav-item" data-nav="activities">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 4.5h12M2 8h12M2 11.5h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      Actividades
+    </button>
+    <button class="nav-item" data-nav="calendar">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1.5" y="2.5" width="13" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M1.5 6h13M5 1.5v3M11 1.5v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Calendario
+    </button>
+
+    <div class="nav-label">Ajustes</div>
+    <button class="nav-item" data-nav="settings">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="2.3" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.5v2M8 12.5v2M14.5 8h-2M3.5 8h-2M12.6 3.4l-1.4 1.4M4.8 11.2l-1.4 1.4M12.6 12.6l-1.4-1.4M4.8 4.8 3.4 3.4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Configuración
+    </button>
+
+    <div class="sidebar-foot">
+      <div class="me-box" id="meBox"></div>
+    </div>
+  </aside>
+
+  <div class="scrim" id="navScrim"></div>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Menú">
+        <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h12M2 12h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <h1 id="pageTitle">Panel</h1>
+      <div class="spacer"></div>
+      <label class="search">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="m11 11 3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <input type="search" id="globalSearch" placeholder="Buscar contactos, negocios…" />
+      </label>
+      <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema" title="Modo día / noche"></button>
+      <span class="pill" id="gPill" role="button" tabindex="0" title="Estado de Google Calendar">
+        <span class="dot"></span><span id="gPillText">Google Calendar</span>
+      </span>
+      <div class="menu-wrap">
+        <button class="btn primary" id="newBtn">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2.5v11M2.5 8h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Nuevo
+        </button>
+        <div class="menu" id="newMenu" hidden>
+          <button data-new="contact">Nuevo contacto</button>
+          <button data-new="deal">Nuevo negocio</button>
+          <button data-new="activity">Nueva actividad</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="banner" id="demoBanner" hidden>
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.5v3.5M8 5.2v.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        Estás viendo datos de ejemplo para explorar la interfaz.
+        <button class="btn sm" id="clearDemo">Empezar de cero</button>
+      </div>
+
+      <section class="view" id="view-dashboard"></section>
+      <section class="view" id="view-contacts"></section>
+      <section class="view" id="view-pipeline"></section>
+      <section class="view" id="view-activities"></section>
+      <section class="view" id="view-calendar"></section>
+      <section class="view" id="view-settings"></section>
+    </div>
+  </main>
+</div>
+
+<div class="auth" id="authView" hidden>
+  <div class="auth-inner">
+    <div class="auth-toprow">
+      <button class="icon-btn" id="authTheme" aria-label="Cambiar tema" title="Modo día / noche"></button>
+    </div>
+    <div class="auth-brand">
+      <div class="brand-mark" id="brandMarkAuth">3D</div>
+      <div><div class="brand-name">3D Products Chile</div><div class="brand-sub">CRM</div></div>
+    </div>
+    <div class="auth-card">
+      <div class="auth-tabs">
+        <button data-tab="login" class="on">Iniciar sesión</button>
+        <button data-tab="register">Registrar empleado</button>
+      </div>
+      <h2 id="authHeading">Bienvenido de nuevo</h2>
+      <div class="sub" id="authSub">Accede con tu ID de empleado o tu correo.</div>
+      <form class="auth-form" id="authForm"></form>
+      <div class="auth-hint" id="authHint"></div>
+    </div>
+  </div>
+</div>
+
+<div class="scrim" id="modalScrim"></div>
+<div class="modal-card" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-head" id="modalTitle"></div>
+  <form id="modalForm">
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot">
+      <button type="button" class="btn ghost" id="modalCancel">Cancelar</button>
+      <button type="submit" class="btn primary" id="modalSave">Guardar</button>
+    </div>
+  </form>
+</div>
+
+<div class="scrim" id="drawerScrim"></div>
+<aside class="drawer" id="drawer" aria-label="Detalle"></aside>
+
+<div class="toasts" id="toasts"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  // ============ CONSTANTS ============
+  var STORE_KEY = "cadencia-crm-v4-cl";
+  var GOOGLE_SCOPE = "https://www.googleapis.com/auth/calendar.events";
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // Localización: todo Chile
+  var LOCALE = "es-CL";
+  var TZ = "America/Santiago";
+  var CURRENCY = "CLP";
+  // Logo oficial 3D Products Chile (monocromo, hereda el color del contenedor)
+  var LOGO_SVG = '<svg viewBox="0 0 1070 674.16" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="3D Products Chile"><path fill="currentColor" d="M487.94,525.98c-1.55,2.35-3.71,4.49-4.56,7.07-25.7,77.54-83.33,115.84-160.14,131.99-70.58,14.84-139.62,12.87-206.5-15.71C41.43,617.14-3.81,543.06.25,461.23c.39-7.95,3.08-10.65,10.9-10.62,45.48.22,90.96.31,136.43-.08,8.48-.07,11.85,3.49,13.03,10.97,1.08,6.86,1.81,13.83,3.53,20.54,7.92,30.83,31.9,50.81,63.99,52.58,13.36.73,27.23,1.62,40.17-.99,39.49-7.97,54.69-39.11,51.09-73.71-3.78-36.26-20.59-51.48-57.65-55.75-14.71-1.69-29.42-3.55-44.18-4.73-7.42-.59-9.67-4.21-9.64-11,.12-34.06.19-68.12-.04-102.18-.06-8.69,4.17-11.07,12.04-11.62,16.06-1.12,32.24-2.03,48.05-4.84,34.06-6.05,53.61-29.59,52.53-61.46-1.31-38.6-22.25-64.4-57.22-68.3-14.09-1.57-28.89-1.76-42.76.74-34.69,6.25-55.33,29.5-59.01,65.72-1.4,13.77-6.61,18.09-20.44,17.8-41.96-.87-83.96-.66-125.93-.09-11.4.15-14.95-3.18-14.98-14.81C-.15,120.78,47.22,47.79,131.53,19.36c85.58-28.86,171.96-25.91,255.2,11.91,48.7,22.12,81.03,59.6,96.55,111.09.92,3.05,2.36,5.94,3.56,8.91,1.11-.07,2.22-.15,3.33-.22.33-4.37.93-8.75.94-13.12.07-39.74.31-79.48-.14-119.21-.11-9.96,2.41-13.8,13.19-13.73,80.45.48,160.96-1.5,241.35.86,145.43,4.26,264.75,86.61,305.65,220.7,41.34,135.55,16.01,257.16-89.28,356.91-46.02,43.6-102.6,67.47-164.75,77.18-26.16,4.09-52.97,5.24-79.5,5.51-70.4.73-140.81-.02-211.2.5-12.06.09-15.78-3.29-15.54-15.45.75-36.66.27-73.35.27-110.03,0-4.72,0-9.45,0-14.17-1.07-.34-2.14-.69-3.21-1.03ZM673.49,337.13c0,48.04-.02,96.08,0,144.12.01,19.2.06,19.22,18.52,19.25,15.31.02,30.63.45,45.92-.1,29.47-1.06,56.94-9,80.69-26.91,58.01-43.74,77.87-103.65,64.58-172.46-12.77-66.14-53.03-111.46-121.24-125.65-22.33-4.65-46.03-3.1-69.12-3.68-19.06-.48-19.32.15-19.34,18.7-.04,48.91-.01,97.82-.02,146.74ZM417,335.5c16.84,13.77,34.06,24.24,46.29,38.87,11.94,14.27,18.81,32.79,28.83,51.16,8.21-42.15,33.09-69.89,75.35-88.19-42.91-17.75-67.12-47.02-77.58-89.26-10.12,42.8-36,70.36-72.91,87.43Z"/></svg>';
+  var STAGES = [
+    { id: "nuevo",       label: "Nuevo" },
+    { id: "contactado",  label: "Contactado" },
+    { id: "propuesta",   label: "Propuesta" },
+    { id: "negociacion", label: "Negociación" },
+    { id: "ganado",      label: "Ganado" },
+    { id: "perdido",     label: "Perdido" }
+  ];
+  var OPEN_STAGES = ["nuevo", "contactado", "propuesta", "negociacion"];
+  var TYPES = [
+    { id: "llamada", label: "Llamada" },
+    { id: "reunion", label: "Reunión" },
+    { id: "email",   label: "Email" },
+    { id: "tarea",   label: "Tarea" }
+  ];
+
+  // ============ STATE ============
+  var state = load() || seed();
+  var runtime = { gsi: undefined, token: null, tokenExp: 0, gEvents: [], calRef: startOfMonth(new Date()), tokenClient: null };
+  var currentView = "dashboard";
+
+  function save() {
+    try {
+      localStorage.setItem(STORE_KEY, JSON.stringify({
+        contacts: state.contacts, deals: state.deals, activities: state.activities,
+        employees: state.employees, session: state.session,
+        settings: state.settings, isDemo: state.isDemo
+      }));
+    } catch (e) { /* storage unavailable — run in-memory */ }
+  }
+  function load() {
+    try {
+      var raw = localStorage.getItem(STORE_KEY);
+      if (!raw) return null;
+      var d = JSON.parse(raw);
+      d.settings = d.settings || {};
+      d.contacts = d.contacts || [];
+      d.deals = d.deals || [];
+      d.activities = d.activities || [];
+      d.employees = d.employees || [];
+      d.session = d.session || null;
+      return d;
+    } catch (e) { return null; }
+  }
+
+  function seed() {
+    var now = new Date();
+    function at(offsetDays, hour) {
+      var d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + offsetDays, hour, 0, 0);
+      return d.toISOString();
+    }
+    var contacts = [
+      { id: "c1", name: "Camila Rojas",     company: "Detailing Pro Las Condes",  email: "camila@detailingpro.cl",     phone: "+56 9 6421 8890", tags: ["Taller", "Santiago"],       owner: "Tú" },
+      { id: "c2", name: "Matías Fuentes",   company: "Lavaseco Autos Ñuñoa",      email: "matias@autosnunoa.cl",       phone: "+56 9 8123 4470", tags: ["Lavado"],                  owner: "Tú" },
+      { id: "c3", name: "Francisca Vera",   company: "Automotriz Bravo",          email: "fvera@automotrizbravo.cl",   phone: "+56 2 2445 6031", tags: ["Concesionario", "Cliente"], owner: "Tú" },
+      { id: "c4", name: "Ignacio Soto",     company: "Car Spa Viña del Mar",      email: "ignacio@carspa.cl",          phone: "+56 9 7734 0552", tags: ["Detailing", "Viña"],       owner: "Tú" },
+      { id: "c5", name: "Daniela Muñoz",    company: "Rent a Car Andes",          email: "dmunoz@rentacarandes.cl",    phone: "+56 2 2331 7720", tags: ["Flota"],                   owner: "Tú" },
+      { id: "c6", name: "Sebastián Kast",   company: "Taller 4x4 Temuco",         email: "seba@taller4x4.cl",          phone: "+56 9 5540 3319", tags: ["Taller", "Sur"],           owner: "Tú" },
+      { id: "c7", name: "Valentina Pérez",  company: "Full Brillo Antofagasta",   email: "valentina@fullbrillo.cl",    phone: "+56 9 4220 8871", tags: ["Detailing", "Norte"],      owner: "Tú" },
+      { id: "c8", name: "Rodrigo Díaz",     company: "Comercial Ruta Sur",        email: "rdiaz@rutasur.cl",           phone: "+56 41 218 3340", tags: ["Distribuidor", "Cliente"], owner: "Tú" }
+    ];
+    var deals = [
+      { id: "d1",  title: "Kit cerámico SiO₂ x12 — Detailing Pro",             contactId: "c1", value: 480000,  stage: "nuevo",       closeDate: at(27, 0) },
+      { id: "d2",  title: "Reposición mensual de insumos — Lavaseco Ñuñoa",     contactId: "c2", value: 320000,  stage: "contactado",  closeDate: at(19, 0) },
+      { id: "d3",  title: "Contrato mayorista trimestral — Automotriz Bravo",   contactId: "c3", value: 2650000, stage: "propuesta",   closeDate: at(37, 0) },
+      { id: "d4",  title: "Pack pulido + sellado x20 — Car Spa Viña",           contactId: "c4", value: 890000,  stage: "negociacion", closeDate: at(9, 0) },
+      { id: "d5",  title: "Onboarding de productos + capacitación — Taller 4x4", contactId: "c6", value: 540000,  stage: "contactado",  closeDate: at(22, 0) },
+      { id: "d6",  title: "Línea completa de detailing — Full Brillo",          contactId: "c7", value: 1780000, stage: "propuesta",   closeDate: at(32, 0) },
+      { id: "d7",  title: "Renovación anual de distribución — Ruta Sur",        contactId: "c8", value: 4200000, stage: "negociacion", closeDate: at(5, 0) },
+      { id: "d8",  title: "Pedido adicional shampoo pH neutro — Automotriz Bravo", contactId: "c3", value: 610000, stage: "ganado",    closeDate: at(-14, 0) },
+      { id: "d9",  title: "Prueba piloto de revestimiento — Rent a Car Andes",  contactId: "c5", value: 260000,  stage: "nuevo",       closeDate: at(42, 0) },
+      { id: "d10", title: "Cotización kits de regalo — Car Spa Viña",           contactId: "c4", value: 350000,  stage: "perdido",     closeDate: at(-22, 0) },
+      { id: "d11", title: "Capacitación avanzada aplicación cerámica — Lavaseco Ñuñoa", contactId: "c2", value: 300000, stage: "ganado", closeDate: at(-6, 0) }
+    ];
+    var raw = [
+      [-6, 10, "email",   "Envío de cotización inicial",       "c3", "d3", true],
+      [-4, 12, "llamada", "Llamada de prospección",            "c2", "d2", true],
+      [-2, 9,  "reunion", "Demo de aplicación cerámica",       "c4", "d4", true],
+      [-1, 16, "tarea",   "Preparar presupuesto mayorista",    "c7", "d6", true],
+      [0,  11, "reunion", "Reunión de seguimiento",            "c1", "d1", false],
+      [0,  15, "llamada", "Revisar condiciones de pago",       "c8", "d7", false],
+      [1,  10, "reunion", "Presentación a gerencia",           "c3", "d3", false],
+      [1,  17, "tarea",   "Enviar orden de compra",            "c8", "d7", false],
+      [2,  12, "llamada", "Cierre de negociación",             "c4", "d4", false],
+      [3,  9,  "reunion", "Capacitación de producto en taller","c6", "d5", false],
+      [4,  16, "email",   "Seguimiento de cotización",         "c7", "d6", false],
+      [6,  11, "reunion", "Revisión trimestral de compras",    "c3", null, false],
+      [8,  10, "tarea",   "Actualizar ficha en el CRM",        "c5", "d9", false]
+    ];
+    var activities = raw.map(function (r, i) {
+      return {
+        id: "a" + (i + 1), type: r[2], title: r[3], contactId: r[4], dealId: r[5],
+        datetime: at(r[0], r[1]), durationMin: r[2] === "reunion" ? 45 : 30,
+        done: r[6], googleEventId: null, notes: ""
+      };
+    });
+    var demoEmp = {
+      id: "admin", name: "Sofía Fuenzalida", email: "sofia@3dproductschile.cl",
+      salt: "demo", hash: hashPass("cadencia", "demo"), createdAt: now.toISOString(), demoSeed: true
+    };
+    return {
+      contacts: contacts, deals: deals, activities: activities,
+      employees: [demoEmp], session: { employeeId: "admin" },
+      settings: { googleClientId: "", theme: "system" },
+      isDemo: true
+    };
+  }
+
+  // ============ UTIL ============
+  function $(sel, ctx) { return (ctx || document).querySelector(sel); }
+  function $all(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
+  function uid(p) { return p + Math.random().toString(36).slice(2, 9); }
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+  function initials(name) {
+    var p = String(name || "").trim().split(/\s+/);
+    return ((p[0] || "")[0] || "" ) + ((p[1] || "")[0] || "");
+  }
+  function fmtMoney(n) {
+    return new Intl.NumberFormat(LOCALE, { style: "currency", currency: CURRENCY, maximumFractionDigits: 0 }).format(Math.round(n || 0));
+  }
+  function fmtDate(iso) {
+    if (!iso) return "—";
+    return new Date(iso).toLocaleDateString(LOCALE, { day: "numeric", month: "short", year: "numeric", timeZone: TZ });
+  }
+  function fmtTime(iso) {
+    return new Date(iso).toLocaleTimeString(LOCALE, { hour: "2-digit", minute: "2-digit", timeZone: TZ });
+  }
+  function dayKey(d) {
+    var x = new Date(d);
+    return x.getFullYear() + "-" + String(x.getMonth() + 1).padStart(2, "0") + "-" + String(x.getDate()).padStart(2, "0");
+  }
+  function startOfMonth(d) { return new Date(d.getFullYear(), d.getMonth(), 1); }
+  function sameDay(a, b) { return dayKey(a) === dayKey(b); }
+  function relDayLabel(iso) {
+    var d = new Date(iso), now = new Date();
+    var diff = Math.round((new Date(dayKey(d)) - new Date(dayKey(now))) / 86400000);
+    if (diff === 0) return "Hoy";
+    if (diff === 1) return "Mañana";
+    if (diff === -1) return "Ayer";
+    return d.toLocaleDateString(LOCALE, { weekday: "long", day: "numeric", month: "long", timeZone: TZ });
+  }
+  function firstName(name) { return String(name || "").trim().split(/\s+/)[0] || ""; }
+  function chileHour() {
+    var h = parseInt(new Date().toLocaleString("en-US", { timeZone: TZ, hour: "numeric", hour12: false }), 10);
+    return isNaN(h) ? new Date().getHours() : (h % 24);
+  }
+  function greeting() {
+    var h = chileHour();
+    if (h < 6) return "Buenas noches";
+    if (h < 13) return "Buenos días";
+    if (h < 20) return "Buenas tardes";
+    return "Buenas noches";
+  }
+  function contactById(id) { return state.contacts.find(function (c) { return c.id === id; }); }
+  function dealById(id) { return state.deals.find(function (d) { return d.id === id; }); }
+  function stageLabel(id) { var s = STAGES.find(function (x) { return x.id === id; }); return s ? s.label : id; }
+  function typeLabel(id) { var t = TYPES.find(function (x) { return x.id === id; }); return t ? t.label : id; }
+
+  function toast(msg) {
+    var el = document.createElement("div");
+    el.className = "toast";
+    el.textContent = msg;
+    $("#toasts").appendChild(el);
+    setTimeout(function () { el.style.opacity = "0"; el.style.transition = "opacity .3s"; }, 2400);
+    setTimeout(function () { el.remove(); }, 2800);
+  }
+
+  function typeIconSvg(type) {
+    var m = {
+      llamada: '<path d="M4 3.2h3l1.4 3.6-1.9 1a9.5 9.5 0 0 0 4.7 4.7l1-1.9L16.8 15v3a2 2 0 0 1-2 2A15 15 0 0 1 2 5.2a2 2 0 0 1 2-2z" fill="currentColor" transform="scale(0.8)"/>',
+      reunion: '<rect x="2" y="3" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>',
+      email:   '<rect x="1.5" y="3" width="13" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="m2.5 4.5 5.5 4 5.5-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>',
+      tarea:   '<rect x="2" y="2" width="12" height="12" rx="2.5" stroke="currentColor" stroke-width="1.5"/><path d="m5 8 2 2 4-4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>'
+    };
+    return '<svg width="15" height="15" viewBox="0 0 16 16" fill="none">' + (m[type] || m.tarea) + '</svg>';
+  }
+
+  // ============ AUTH (local, per-navegador) ============
+  // Nota: el hash es una ofuscación local; no sustituye a un backend con auth real.
+  function hashPass(pw, salt) {
+    var s = "cad|" + salt + "|" + pw + "|encia";
+    var h1 = 5381, h2 = 2166136261;
+    for (var i = 0; i < s.length; i++) { h1 = (((h1 << 5) + h1) ^ s.charCodeAt(i)) >>> 0; }
+    for (var j = s.length - 1; j >= 0; j--) { h2 = ((h2 ^ s.charCodeAt(j)) * 16777619) >>> 0; }
+    return h1.toString(16).padStart(8, "0") + h2.toString(16).padStart(8, "0");
+  }
+  function currentEmployee() {
+    if (!state.session) return null;
+    return (state.employees || []).find(function (e) { return e.id === state.session.employeeId; }) || null;
+  }
+  function empByLogin(v) {
+    var q = String(v || "").trim().toLowerCase();
+    return (state.employees || []).find(function (e) {
+      return e.id.toLowerCase() === q || (e.email || "").toLowerCase() === q;
+    }) || null;
+  }
+  function createEmployee(f) {
+    var id = (f.empId || "").trim();
+    var email = (f.email || "").trim();
+    if (!id) return "Indica un ID de empleado.";
+    if (!f.name || !f.name.trim()) return "Indica el nombre.";
+    if (!EMAIL_RE.test(email)) return "El correo no es válido.";
+    if ((f.pass || "").length < 4) return "La clave debe tener al menos 4 caracteres.";
+    if (f.pass2 != null && f.pass !== f.pass2) return "Las claves no coinciden.";
+    if ((state.employees || []).some(function (e) { return e.id.toLowerCase() === id.toLowerCase(); })) return "Ese ID ya está en uso.";
+    if ((state.employees || []).some(function (e) { return (e.email || "").toLowerCase() === email.toLowerCase(); })) return "Ese correo ya está registrado.";
+    var salt = Math.random().toString(36).slice(2, 10);
+    var emp = { id: id, name: f.name.trim(), email: email, salt: salt, hash: hashPass(f.pass, salt), createdAt: new Date().toISOString() };
+    state.employees.push(emp);
+    return emp;
+  }
+
+  var authTab = "login";
+  function showAuth() {
+    $("#authView").hidden = false;
+    document.body.style.overflow = "hidden";
+    renderAuthForm();
+  }
+  function hideAuth() {
+    $("#authView").hidden = true;
+    document.body.style.overflow = "";
+  }
+  function renderAuthForm() {
+    $all("#authView .auth-tabs button").forEach(function (b) { b.classList.toggle("on", b.dataset.tab === authTab); });
+    var login = authTab === "login";
+    $("#authHeading").textContent = login ? "Bienvenido de nuevo" : "Registrar empleado";
+    $("#authSub").textContent = login ? "Accede con tu ID de empleado o tu correo." : "Crea tu acceso con ID, correo y clave propia.";
+    var fields = login
+      ? [
+          { name: "login", label: "ID de empleado o correo", ph: "admin  ·  tu@empresa.com", req: true },
+          { name: "pass", label: "Clave", type: "password", req: true }
+        ]
+      : [
+          { name: "empId", label: "ID de empleado", ph: "p. ej. mgomez", req: true },
+          { name: "name", label: "Nombre completo", req: true },
+          { name: "email", label: "Correo", type: "email", req: true },
+          { name: "pass", label: "Clave", type: "password", req: true },
+          { name: "pass2", label: "Repite la clave", type: "password", req: true }
+        ];
+    $("#authForm").innerHTML = fields.map(function (f) {
+      return '<div class="field"><label>' + esc(f.label) + '</label>' +
+        '<input type="' + (f.type || "text") + '" name="' + f.name + '" placeholder="' + esc(f.ph || "") + '"' +
+        (f.req ? " required" : "") + ' autocomplete="off" spellcheck="false"></div>';
+    }).join("") +
+      '<div class="auth-err" id="authErr"></div>' +
+      '<button type="submit" class="btn primary" style="justify-content:center;padding:11px">' +
+      (login ? "Entrar" : "Crear acceso y entrar") + '</button>';
+    var hint = $("#authHint");
+    if (state.isDemo && (state.employees || []).some(function (e) { return e.demoSeed; })) {
+      hint.innerHTML = 'Acceso de prueba — ID <code>admin</code> · clave <code>cadencia</code>';
+    } else { hint.textContent = ""; }
+    var first = $("#authForm input");
+    if (first) setTimeout(function () { first.focus(); }, 30);
+  }
+  function submitAuth(e) {
+    e.preventDefault();
+    var f = {};
+    $all("#authForm [name]").forEach(function (el) { f[el.name] = el.value; });
+    var err = $("#authErr");
+    if (authTab === "login") {
+      var emp = empByLogin(f.login);
+      if (!emp || emp.hash !== hashPass(f.pass || "", emp.salt)) { err.textContent = "Credenciales incorrectas."; return; }
+      state.session = { employeeId: emp.id };
+      save(); hideAuth(); bootApp();
+    } else {
+      var res = createEmployee({ empId: f.empId, name: f.name, email: f.email, pass: f.pass, pass2: f.pass2 });
+      if (typeof res === "string") { err.textContent = res; return; }
+      state.session = { employeeId: res.id };
+      save(); hideAuth(); bootApp();
+    }
+  }
+  function logout() {
+    state.session = null; save();
+    closeModal(); closeDrawer();
+    showAuth();
+  }
+
+  function renderMe() {
+    var e = currentEmployee();
+    var box = $("#meBox");
+    if (!e) { box.innerHTML = ""; return; }
+    box.innerHTML =
+      '<div class="avatar">' + esc(initials(e.name).toUpperCase()) + '</div>' +
+      '<div class="me-info"><div class="me-name">' + esc(e.name) + '</div><div class="me-mail">' + esc(e.email) + '</div></div>' +
+      '<button class="me-out" id="meOut" title="Cerrar sesión" aria-label="Cerrar sesión">' +
+        '<svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M6 2.5H3.5A1.5 1.5 0 0 0 2 4v8a1.5 1.5 0 0 0 1.5 1.5H6M10.5 11 14 8l-3.5-3M14 8H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+      '</button>';
+    $("#meOut").addEventListener("click", logout);
+  }
+
+  // ============ THEME ============
+  function effectiveTheme() {
+    var t = (state.settings.theme) || "system";
+    if (t === "light" || t === "dark") return t;
+    return (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+  }
+  var SUN = '<svg width="17" height="17" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3.3" stroke="currentColor" stroke-width="1.5"/><path d="M8 1v2M8 13v2M15 8h-2M3 8H1M12.5 3.5l-1.4 1.4M4.9 11.1l-1.4 1.4M12.5 12.5l-1.4-1.4M4.9 4.9 3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>';
+  var MOON = '<svg width="17" height="17" viewBox="0 0 16 16" fill="none"><path d="M13.5 9.3A5.6 5.6 0 0 1 6.7 2.5a5.6 5.6 0 1 0 6.8 6.8z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>';
+  function updateThemeToggle() {
+    var dark = effectiveTheme() === "dark";
+    var html = dark ? SUN : MOON;
+    var tt = $("#themeToggle"); if (tt) tt.innerHTML = html;
+    var at = $("#authTheme"); if (at) at.innerHTML = html;
+  }
+  function toggleTheme() {
+    state.settings.theme = effectiveTheme() === "dark" ? "light" : "dark";
+    save(); applyTheme(); updateThemeToggle();
+    if (currentView === "settings" && $("#authView").hidden) renderSettings();
+  }
+
+  // ============ IMPORT / EXPORT (CSV · Excel) ============
+  var CSV_COLS = ["Nombre", "Empresa", "Email", "Teléfono", "Etiquetas", "Propietario"];
+  function contactsToAoA() {
+    var rows = [CSV_COLS.slice()];
+    state.contacts.forEach(function (c) {
+      rows.push([c.name || "", c.company || "", c.email || "", c.phone || "", (c.tags || []).join("; "), c.owner || ""]);
+    });
+    return rows;
+  }
+  function aoaToCsv(rows) {
+    return rows.map(function (r) {
+      return r.map(function (v) {
+        v = v == null ? "" : String(v);
+        return /[",\n;]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+      }).join(",");
+    }).join("\r\n");
+  }
+  function parseCsv(text) {
+    var rows = [], row = [], cur = "", q = false;
+    for (var i = 0; i < text.length; i++) {
+      var ch = text[i];
+      if (q) {
+        if (ch === '"') { if (text[i + 1] === '"') { cur += '"'; i++; } else { q = false; } }
+        else cur += ch;
+      } else {
+        if (ch === '"') q = true;
+        else if (ch === "," || ch === ";") { row.push(cur); cur = ""; }
+        else if (ch === "\n") { row.push(cur); rows.push(row); row = []; cur = ""; }
+        else if (ch === "\r") { /* skip */ }
+        else cur += ch;
+      }
+    }
+    if (cur.length || row.length) { row.push(cur); rows.push(row); }
+    return rows.filter(function (r) { return r.some(function (c) { return String(c).trim() !== ""; }); });
+  }
+  function norm(s) { return String(s || "").trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+  function importContactAoA(rows) {
+    if (!rows.length) return { added: 0, updated: 0 };
+    var head = rows[0].map(norm);
+    function col(names) { for (var k = 0; k < names.length; k++) { var idx = head.indexOf(names[k]); if (idx >= 0) return idx; } return -1; }
+    var iName = col(["nombre", "name", "nombre completo", "contacto"]);
+    var iComp = col(["empresa", "company", "compañia", "organizacion"]);
+    var iMail = col(["email", "correo", "correo electronico", "e-mail"]);
+    var iPhone = col(["telefono", "teléfono", "phone", "movil", "móvil", "celular"]);
+    var iTags = col(["etiquetas", "tags", "etiqueta"]);
+    var iOwner = col(["propietario", "owner", "responsable"]);
+    if (iName < 0 && iMail < 0) throw new Error("No encuentro columnas «Nombre» ni «Email» en la cabecera.");
+    var me = currentEmployee();
+    var added = 0, updated = 0;
+    for (var r = 1; r < rows.length; r++) {
+      var row = rows[r];
+      var rec = {
+        name: iName >= 0 ? String(row[iName] || "").trim() : "",
+        company: iComp >= 0 ? String(row[iComp] || "").trim() : "",
+        email: iMail >= 0 ? String(row[iMail] || "").trim() : "",
+        phone: iPhone >= 0 ? String(row[iPhone] || "").trim() : "",
+        tags: iTags >= 0 ? String(row[iTags] || "").split(/[;,/|]/).map(function (t) { return t.trim(); }).filter(Boolean) : [],
+        owner: iOwner >= 0 && row[iOwner] ? String(row[iOwner]).trim() : (me ? me.name : "")
+      };
+      if (!rec.name && !rec.email) continue;
+      if (!rec.name) rec.name = rec.email.split("@")[0];
+      var existing = rec.email ? state.contacts.find(function (c) { return (c.email || "").toLowerCase() === rec.email.toLowerCase(); }) : null;
+      if (existing) { Object.assign(existing, rec); updated++; }
+      else { state.contacts.push(Object.assign({ id: uid("c") }, rec)); added++; }
+    }
+    return { added: added, updated: updated };
+  }
+  function triggerDownload(filename, blob) {
+    try {
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url; a.download = filename;
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { a.remove(); URL.revokeObjectURL(url); }, 200);
+      return true;
+    } catch (e) { return false; }
+  }
+  function exportContacts(fmt) {
+    var rows = contactsToAoA();
+    var stamp = new Date().toISOString().slice(0, 10);
+    var plainCsv = aoaToCsv(rows);
+    // Copia siempre visible: en entornos que bloquean descargas (Artifact) es la vía de salida.
+    var ta = $("#ieCsvOut"); if (ta) { ta.hidden = false; ta.value = plainCsv; }
+    if (fmt === "xlsx" && window.XLSX) {
+      try {
+        var wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(rows), "Contactos");
+        XLSX.writeFile(wb, "contactos-" + stamp + ".xlsx");
+        toast("Excel generado (si no se descarga, copia el CSV de abajo)");
+        return;
+      } catch (e) { /* fall through to csv */ }
+    }
+    var ok = triggerDownload("contactos-" + stamp + ".csv", new Blob(["﻿" + plainCsv], { type: "text/csv;charset=utf-8" }));
+    toast(ok ? "CSV descargado" : "Copia el CSV del cuadro de abajo");
+    if (ta) { ta.focus(); ta.select(); }
+  }
+
+  function openImportExport() {
+    openModalRaw("Importar / exportar contactos",
+      '<div class="field"><label>Archivo CSV o Excel (.xlsx)</label>' +
+      '<input type="file" id="ieFile" accept=".csv,.xlsx,.xls,text/csv"></div>' +
+      '<div class="field"><label>…o pega aquí el CSV</label>' +
+      '<textarea id="iePaste" placeholder="Nombre,Empresa,Email,Teléfono,Etiquetas" style="min-height:90px;font-family:var(--mono);font-size:11px"></textarea></div>' +
+      '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
+        '<button type="button" class="btn primary" id="ieImport">Importar</button>' +
+        '<button type="button" class="btn" id="ieExpCsv">Exportar CSV</button>' +
+        '<button type="button" class="btn" id="ieExpXlsx">Exportar Excel</button>' +
+      '</div>' +
+      '<p style="font-size:12px;color:var(--muted);margin:2px 0 0">Columnas reconocidas: Nombre, Empresa, Email, Teléfono, Etiquetas, Propietario. Se actualizan los contactos cuyo email coincida.</p>' +
+      '<textarea id="ieCsvOut" hidden readonly style="min-height:110px;font-family:var(--mono);font-size:11px"></textarea>',
+      null);
+    $("#modalSave").style.display = "none";
+    $("#modalCancel").textContent = "Cerrar";
+
+    $("#ieExpCsv").addEventListener("click", function () { exportContacts("csv"); });
+    $("#ieExpXlsx").addEventListener("click", function () { exportContacts(window.XLSX ? "xlsx" : "csv"); });
+    $("#ieImport").addEventListener("click", function () {
+      var file = $("#ieFile").files && $("#ieFile").files[0];
+      var pasted = $("#iePaste").value.trim();
+      var done = function (rows) {
+        try {
+          var res = importContactAoA(rows);
+          state.isDemo = false; save(); closeModal(); refresh();
+          toast(res.added + " añadidos · " + res.updated + " actualizados");
+        } catch (err) { toast("Importación: " + err.message); }
+      };
+      if (file) {
+        var isXlsx = /\.x(lsx|ls)$/i.test(file.name);
+        if (isXlsx && !window.XLSX) { toast("No pude cargar el lector de Excel. Guarda el archivo como CSV e impórtalo."); return; }
+        var reader = new FileReader();
+        reader.onload = function () {
+          if (isXlsx && window.XLSX) {
+            try {
+              var wb = XLSX.read(reader.result, { type: "array" });
+              var sh = wb.Sheets[wb.SheetNames[0]];
+              done(XLSX.utils.sheet_to_json(sh, { header: 1, raw: false, defval: "" }));
+            } catch (e) { toast("No pude leer el Excel: " + e.message); }
+          } else {
+            done(parseCsv(typeof reader.result === "string" ? reader.result : new TextDecoder().decode(reader.result)));
+          }
+        };
+        if (isXlsx && window.XLSX) reader.readAsArrayBuffer(file);
+        else reader.readAsText(file, "utf-8");
+      } else if (pasted) {
+        done(parseCsv(pasted));
+      } else {
+        toast("Elige un archivo o pega el CSV");
+      }
+    });
+  }
+
+  // ============ ROUTER ============
+  var TITLES = { dashboard: "Panel", contacts: "Contactos", pipeline: "Pipeline", activities: "Actividades", calendar: "Calendario", settings: "Configuración" };
+  function go(view) {
+    if (!TITLES[view]) view = "dashboard";
+    currentView = view;
+    if (location.hash !== "#" + view) location.hash = view;
+    $all(".nav-item[data-nav]").forEach(function (b) { b.classList.toggle("active", b.dataset.nav === view); });
+    $all(".view").forEach(function (v) { v.classList.toggle("active", v.id === "view-" + view); });
+    $("#pageTitle").textContent = TITLES[view];
+    render(view);
+    $("#sidebar").classList.remove("on");
+    $("#navScrim").classList.remove("on");
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", function () { go(location.hash.slice(1)); });
+
+  function render(view) {
+    if (view === "dashboard") renderDashboard();
+    else if (view === "contacts") renderContacts();
+    else if (view === "pipeline") renderPipeline();
+    else if (view === "activities") renderActivities();
+    else if (view === "calendar") renderCalendar();
+    else if (view === "settings") renderSettings();
+  }
+  function refresh() { render(currentView); updateGooglePill(); }
+
+  // ============ DASHBOARD ============
+  function renderDashboard() {
+    var open = state.deals.filter(function (d) { return OPEN_STAGES.indexOf(d.stage) >= 0; });
+    var pipelineValue = open.reduce(function (s, d) { return s + (d.value || 0); }, 0);
+    var now = new Date();
+    var wonMonth = state.deals.filter(function (d) {
+      return d.stage === "ganado" && d.closeDate && sameMonth(new Date(d.closeDate), now);
+    });
+    var wonValue = wonMonth.reduce(function (s, d) { return s + (d.value || 0); }, 0);
+    var weekEnd = new Date(now.getTime() + 7 * 86400000);
+    var meetings = state.activities.filter(function (a) {
+      var t = new Date(a.datetime);
+      return !a.done && (a.type === "reunion" || a.type === "llamada") && t >= now && t <= weekEnd;
+    });
+
+    var upcoming = state.activities
+      .filter(function (a) { return !a.done && new Date(a.datetime) >= new Date(now.getFullYear(), now.getMonth(), now.getDate()); })
+      .sort(function (a, b) { return new Date(a.datetime) - new Date(b.datetime); })
+      .slice(0, 6);
+    var recent = state.activities.slice().sort(function (a, b) { return new Date(b.datetime) - new Date(a.datetime); }).slice(0, 7);
+
+    var me = currentEmployee();
+    var today = new Date().toLocaleDateString(LOCALE, { weekday: "long", day: "numeric", month: "long", timeZone: TZ });
+    $("#view-dashboard").innerHTML =
+      '<div class="greet">' +
+        '<h2 class="greet-title">' + esc(greeting()) + (me ? ", " + esc(firstName(me.name)) : "") + '</h2>' +
+        '<div class="greet-sub" style="text-transform:capitalize">' + esc(today) + '</div>' +
+      '</div>' +
+      '<div class="grid-kpi">' +
+        kpi("Negocios abiertos", String(open.length), "de " + state.deals.length + " en total") +
+        kpi("Valor del pipeline", fmtMoney(pipelineValue), "en etapas activas") +
+        kpi("Ganado este mes", fmtMoney(wonValue), wonMonth.length + " negocio" + (wonMonth.length === 1 ? "" : "s") + " cerrado" + (wonMonth.length === 1 ? "" : "s")) +
+        kpi("Agenda 7 días", String(meetings.length), "reuniones y llamadas") +
+      '</div>' +
+      '<div class="grid-2" style="margin-top:14px">' +
+        '<div class="card">' +
+          '<div class="section-head" style="margin:0 0 6px"><h2>Valor por etapa</h2><span class="count">' + fmtMoney(pipelineValue) + '</span></div>' +
+          stageChart(open) +
+        '</div>' +
+        '<div class="card">' +
+          '<div class="section-head" style="margin:0 0 6px"><h2>Próximas actividades</h2></div>' +
+          (upcoming.length ? '<div class="list">' + upcoming.map(upcomingRow).join("") + '</div>' : '<div class="empty">Nada en el horizonte. Crea una actividad.</div>') +
+        '</div>' +
+      '</div>' +
+      '<div class="card" style="margin-top:14px">' +
+        '<div class="section-head" style="margin:0 0 6px"><h2>Actividad reciente</h2></div>' +
+        (recent.length ? '<div class="list">' + recent.map(recentRow).join("") + '</div>' : '<div class="empty">Sin movimientos todavía.</div>') +
+      '</div>';
+  }
+  function sameMonth(a, b) { return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth(); }
+  function kpi(label, value, note) {
+    return '<div class="kpi"><div class="k-label">' + esc(label) + '</div><div class="k-value">' + esc(value) + '</div><div class="k-note">' + esc(note) + '</div></div>';
+  }
+  function upcomingRow(a) {
+    var c = contactById(a.contactId);
+    return '<div class="row-item" data-open-activity="' + a.id + '" style="cursor:pointer">' +
+      '<div class="type-ic ' + a.type + '">' + typeIconSvg(a.type) + '</div>' +
+      '<div class="ri-body"><div class="ri-title">' + esc(a.title) + '</div>' +
+      '<div class="ri-meta">' + (c ? esc(c.name) + ' · ' : '') + typeLabel(a.type) + (a.googleEventId ? ' · <span class="g-flag">Google</span>' : '') + '</div></div>' +
+      '<div class="ri-time">' + relDayLabel(a.datetime) + '<br>' + fmtTime(a.datetime) + '</div></div>';
+  }
+  function recentRow(a) {
+    var c = contactById(a.contactId);
+    return '<div class="row-item" data-open-activity="' + a.id + '" style="cursor:pointer">' +
+      '<div class="type-ic ' + a.type + '">' + typeIconSvg(a.type) + '</div>' +
+      '<div class="ri-body"><div class="ri-title">' + esc(a.title) + (a.done ? ' · <span style="color:var(--ok);font-weight:600">hecho</span>' : '') + '</div>' +
+      '<div class="ri-meta">' + (c ? esc(c.name) : 'Sin contacto') + '</div></div>' +
+      '<div class="ri-time">' + fmtDate(a.datetime) + '</div></div>';
+  }
+  function stageChart(openDeals) {
+    var data = OPEN_STAGES.map(function (id) {
+      return { id: id, label: stageLabel(id), value: openDeals.filter(function (d) { return d.stage === id; }).reduce(function (s, d) { return s + (d.value || 0); }, 0) };
+    });
+    var max = Math.max.apply(null, data.map(function (d) { return d.value; }).concat([1]));
+    var W = 340, H = 200, padB = 40, padT = 24, padL = 6, padR = 6;
+    var bw = (W - padL - padR) / data.length;
+    var bars = data.map(function (d, i) {
+      var h = d.value === 0 ? 2 : Math.round((d.value / max) * (H - padB - padT));
+      var x = padL + i * bw + bw * 0.18;
+      var w = bw * 0.64;
+      var y = H - padB - h;
+      var op = 0.45 + 0.18 * i;
+      return '<rect x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + h + '" rx="5" fill="var(--accent)" fill-opacity="' + op.toFixed(2) + '"/>' +
+        '<text x="' + (x + w / 2).toFixed(1) + '" y="' + (y - 7).toFixed(1) + '" text-anchor="middle" font-size="10" fill="var(--ink)">' + shortMoney(d.value) + '</text>' +
+        '<text x="' + (x + w / 2).toFixed(1) + '" y="' + (H - padB + 16) + '" text-anchor="middle" font-size="9.5" fill="var(--muted)">' + esc(d.label) + '</text>';
+    }).join("");
+    return '<svg class="chart" viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Valor del pipeline por etapa">' +
+      '<line x1="' + padL + '" y1="' + (H - padB) + '" x2="' + (W - padR) + '" y2="' + (H - padB) + '" stroke="var(--border-strong)" stroke-width="1"/>' +
+      bars + '</svg>';
+  }
+  function shortMoney(n) {
+    n = Math.round(n || 0);
+    if (n >= 1000000) return "$" + (n / 1000000).toFixed(n % 1000000 === 0 ? 0 : 1).replace(".", ",") + "M";
+    if (n >= 1000) return "$" + Math.round(n / 1000) + "k";
+    return "$" + n;
+  }
+
+  // ============ CONTACTS ============
+  var contactQuery = "";
+  function renderContacts() {
+    var q = contactQuery.trim().toLowerCase();
+    var rows = state.contacts.filter(function (c) {
+      if (!q) return true;
+      return (c.name + " " + c.company + " " + c.email + " " + (c.tags || []).join(" ")).toLowerCase().indexOf(q) >= 0;
+    }).sort(function (a, b) { return a.name.localeCompare(b.name, "es"); });
+
+    $("#view-contacts").innerHTML =
+      '<div class="section-head"><h2>Todos los contactos</h2><span class="count">' + rows.length + '</span>' +
+      '<div style="flex:1"></div>' +
+      '<button class="btn sm" id="ieBtn"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M8 10.5V2M8 2 5 5M8 2l3 3M2.5 9.5v3A1.5 1.5 0 0 0 4 14h8a1.5 1.5 0 0 0 1.5-1.5v-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Importar / exportar</button>' +
+      '<label class="search" style="width:200px"><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.5" stroke="currentColor" stroke-width="1.6"/><path d="m11 11 3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>' +
+      '<input type="search" id="contactSearch" placeholder="Filtrar…" value="' + esc(contactQuery) + '"></label></div>' +
+      (rows.length ?
+        '<div class="table-wrap"><table><thead><tr>' +
+        '<th>Nombre</th><th>Empresa</th><th>Email</th><th>Etiquetas</th><th style="text-align:right">Negocios</th><th>Última actividad</th>' +
+        '</tr></thead><tbody>' +
+        rows.map(contactRow).join("") +
+        '</tbody></table></div>'
+        : '<div class="empty">No hay contactos que coincidan.</div>');
+
+    $("#ieBtn").addEventListener("click", openImportExport);
+    var cs = $("#contactSearch");
+    cs.addEventListener("input", function () { contactQuery = cs.value; var p = cs.selectionStart; renderContacts(); var n = $("#contactSearch"); n.focus(); try { n.setSelectionRange(p, p); } catch (e) {} });
+  }
+  function contactRow(c) {
+    var deals = state.deals.filter(function (d) { return d.contactId === c.id; });
+    var openV = deals.filter(function (d) { return OPEN_STAGES.indexOf(d.stage) >= 0; }).reduce(function (s, d) { return s + d.value; }, 0);
+    var last = state.activities.filter(function (a) { return a.contactId === c.id; }).sort(function (a, b) { return new Date(b.datetime) - new Date(a.datetime); })[0];
+    return '<tr class="clickable" data-open-contact="' + c.id + '">' +
+      '<td><div style="display:flex;align-items:center;gap:10px"><div class="avatar">' + esc(initials(c.name).toUpperCase()) + '</div><span class="cell-main">' + esc(c.name) + '</span></div></td>' +
+      '<td>' + esc(c.company || "—") + '</td>' +
+      '<td class="cell-sub">' + esc(c.email || "—") + '</td>' +
+      '<td>' + (c.tags || []).slice(0, 2).map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join(" ") + '</td>' +
+      '<td class="num">' + (deals.length ? deals.length + (openV ? ' · ' + shortMoney(openV) : '') : '—') + '</td>' +
+      '<td class="cell-sub">' + (last ? fmtDate(last.datetime) : "—") + '</td>' +
+      '</tr>';
+  }
+
+  // ============ PIPELINE ============
+  function renderPipeline() {
+    var byStage = {};
+    STAGES.forEach(function (s) { byStage[s.id] = []; });
+    state.deals.forEach(function (d) { (byStage[d.stage] || (byStage[d.stage] = [])).push(d); });
+
+    $("#view-pipeline").innerHTML =
+      '<div class="section-head"><h2>Pipeline de ventas</h2><span class="count">' +
+      fmtMoney(state.deals.filter(function (d) { return OPEN_STAGES.indexOf(d.stage) >= 0; }).reduce(function (s, d) { return s + d.value; }, 0)) + ' abiertos</span></div>' +
+      '<div class="kanban">' +
+      STAGES.map(function (s) {
+        var items = byStage[s.id] || [];
+        var sum = items.reduce(function (a, d) { return a + d.value; }, 0);
+        return '<div class="kcol" data-stage="' + s.id + '">' +
+          '<div class="kcol-head"><span class="kt"><span class="badge s-' + s.id + '">' + esc(s.label) + '</span></span><span class="ks">' + items.length + ' · ' + shortMoney(sum) + '</span></div>' +
+          items.map(dealCard).join("") +
+          '</div>';
+      }).join("") +
+      '</div>';
+
+    wireKanban();
+  }
+  function dealCard(d) {
+    var c = contactById(d.contactId);
+    return '<div class="deal" draggable="true" data-deal="' + d.id + '">' +
+      '<div class="d-title">' + esc(d.title) + '</div>' +
+      '<div class="d-foot"><span class="d-val">' + fmtMoney(d.value) + '</span>' +
+      '<span class="d-contact">' + (c ? '<span class="avatar" style="width:18px;height:18px;font-size:8px">' + esc(initials(c.name).toUpperCase()) + '</span>' + esc(c.name.split(" ")[0]) : '—') + '</span></div>' +
+      '</div>';
+  }
+  function wireKanban() {
+    var dragId = null;
+    $all("#view-pipeline .deal").forEach(function (el) {
+      el.addEventListener("dragstart", function (e) { dragId = el.dataset.deal; el.classList.add("dragging"); e.dataTransfer.effectAllowed = "move"; });
+      el.addEventListener("dragend", function () { el.classList.remove("dragging"); dragId = null; });
+      el.addEventListener("click", function () { openDealModal(dealById(el.dataset.deal)); });
+    });
+    $all("#view-pipeline .kcol").forEach(function (col) {
+      col.addEventListener("dragover", function (e) { e.preventDefault(); col.classList.add("drop"); });
+      col.addEventListener("dragleave", function () { col.classList.remove("drop"); });
+      col.addEventListener("drop", function (e) {
+        e.preventDefault(); col.classList.remove("drop");
+        if (!dragId) return;
+        var d = dealById(dragId);
+        if (d && d.stage !== col.dataset.stage) {
+          d.stage = col.dataset.stage;
+          save(); refresh();
+          toast('"' + d.title.slice(0, 28) + '" → ' + stageLabel(d.stage));
+        }
+      });
+    });
+  }
+
+  // ============ ACTIVITIES ============
+  var actFilter = "all";
+  function renderActivities() {
+    var list = state.activities.slice().sort(function (a, b) { return new Date(a.datetime) - new Date(b.datetime); });
+    if (actFilter === "pending") list = list.filter(function (a) { return !a.done; });
+    if (actFilter === "done") list = list.filter(function (a) { return a.done; });
+
+    var groups = {};
+    list.forEach(function (a) { (groups[dayKey(a.datetime)] || (groups[dayKey(a.datetime)] = [])).push(a); });
+    var keys = Object.keys(groups).sort();
+
+    $("#view-activities").innerHTML =
+      '<div class="section-head"><h2>Actividades</h2>' +
+      '<div style="flex:1"></div>' +
+      '<div class="seg" id="actSeg">' +
+        '<button data-f="all" class="' + (actFilter === "all" ? "on" : "") + '">Todas</button>' +
+        '<button data-f="pending" class="' + (actFilter === "pending" ? "on" : "") + '">Pendientes</button>' +
+        '<button data-f="done" class="' + (actFilter === "done" ? "on" : "") + '">Hechas</button>' +
+      '</div></div>' +
+      (keys.length ? keys.map(function (k) {
+        return '<div class="day-group"><div class="day-head">' + esc(relDayLabel(groups[k][0].datetime)) + '</div>' +
+          groups[k].map(activityCard).join("") + '</div>';
+      }).join("") : '<div class="empty">No hay actividades en esta vista.</div>');
+
+    $all("#actSeg button").forEach(function (b) {
+      b.addEventListener("click", function () { actFilter = b.dataset.f; renderActivities(); });
+    });
+  }
+  function activityCard(a) {
+    var c = contactById(a.contactId), d = dealById(a.dealId);
+    var synced = !!a.googleEventId;
+    return '<div class="act ' + (a.done ? "done" : "") + '" data-activity="' + a.id + '">' +
+      '<button class="chk ' + (a.done ? "on" : "") + '" data-toggle="' + a.id + '" aria-label="Completar" title="Marcar como hecha">' +
+        (a.done ? '<svg width="11" height="11" viewBox="0 0 16 16" fill="none"><path d="m3 8 3.5 3.5L13 4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '') +
+      '</button>' +
+      '<div class="a-body" data-edit-activity="' + a.id + '" style="cursor:pointer">' +
+        '<div class="a-title">' + esc(a.title) + '</div>' +
+        '<div class="a-meta">' +
+          '<span class="mchip"><span class="type-ic ' + a.type + '" style="width:18px;height:18px;border:none;background:none">' + typeIconSvg(a.type) + '</span>' + typeLabel(a.type) + '</span>' +
+          (c ? '<span class="mchip">· ' + esc(c.name) + '</span>' : '') +
+          (d ? '<span class="mchip">· ' + esc(d.title.split(" — ")[0]) + '</span>' : '') +
+          (synced ? '<span class="g-flag">· <svg width="11" height="11" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M2 6.5h12" stroke="currentColor" stroke-width="1.6"/></svg> En Google Calendar</span>' : '') +
+        '</div>' +
+      '</div>' +
+      '<div class="a-side">' +
+        '<span class="a-time">' + fmtTime(a.datetime) + '</span>' +
+        (synced ? '' : '<button class="btn sm" data-gcal="' + a.id + '">Añadir a Google</button>') +
+      '</div>' +
+    '</div>';
+  }
+
+  // ============ CALENDAR ============
+  function renderCalendar() {
+    var ref = runtime.calRef;
+    var monthName = new Date(ref.getFullYear(), ref.getMonth(), 15).toLocaleDateString(LOCALE, { month: "long", year: "numeric" });
+    var first = startOfMonth(ref);
+    var startDow = (first.getDay() + 6) % 7; // Monday first
+    var gridStart = new Date(first.getFullYear(), first.getMonth(), 1 - startDow);
+    var dows = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"];
+
+    var actByDay = {};
+    state.activities.forEach(function (a) { (actByDay[dayKey(a.datetime)] || (actByDay[dayKey(a.datetime)] = [])).push(a); });
+    var gByDay = {};
+    runtime.gEvents.forEach(function (e) {
+      var st = e.start && (e.start.dateTime || e.start.date);
+      if (!st) return;
+      (gByDay[dayKey(st)] || (gByDay[dayKey(st)] = [])).push(e);
+    });
+
+    var cells = "";
+    for (var i = 0; i < 42; i++) {
+      var day = new Date(gridStart.getFullYear(), gridStart.getMonth(), gridStart.getDate() + i);
+      var k = dayKey(day);
+      var out = day.getMonth() !== ref.getMonth();
+      var isToday = sameDay(day, new Date());
+      var items = (actByDay[k] || []).slice().sort(function (a, b) { return new Date(a.datetime) - new Date(b.datetime); });
+      var gitems = gByDay[k] || [];
+      var evs = items.slice(0, 3).map(function (a) {
+        return '<div class="cal-ev ' + (a.done ? "done" : "") + '" data-edit-activity="' + a.id + '" title="' + esc(a.title) + '">' + fmtTime(a.datetime) + ' ' + esc(a.title) + '</div>';
+      }).join("");
+      evs += gitems.slice(0, 2).map(function (e) {
+        return '<div class="cal-ev g" title="Google Calendar: ' + esc(e.summary || "") + '">' + esc(e.summary || "(sin título)") + '</div>';
+      }).join("");
+      var extra = (items.length - 3) + (gitems.length - 2 > 0 ? gitems.length - 2 : 0);
+      var moreCount = Math.max(0, items.length - 3) + Math.max(0, gitems.length - 2);
+      cells += '<div class="cal-cell ' + (out ? "out" : "") + ' ' + (isToday ? "today" : "") + '" data-day="' + k + '">' +
+        '<div class="cal-num">' + day.getDate() + '</div>' + evs +
+        (moreCount > 0 ? '<div class="cal-more">+' + moreCount + ' más</div>' : '') +
+        '</div>';
+    }
+
+    $("#view-calendar").innerHTML =
+      '<div class="cal-head">' +
+        '<button class="btn sm" id="calPrev" aria-label="Mes anterior">‹</button>' +
+        '<div class="cal-month" style="text-transform:capitalize">' + esc(monthName) + '</div>' +
+        '<button class="btn sm" id="calNext" aria-label="Mes siguiente">›</button>' +
+        '<button class="btn sm" id="calToday">Hoy</button>' +
+        '<div style="flex:1"></div>' +
+        (runtime.token ? '<button class="btn sm" id="calSync">Sincronizar Google</button>' : '<span class="cell-sub">Actividades del CRM · <a href="#settings">conectar Google</a></span>') +
+      '</div>' +
+      '<div class="cal-grid">' +
+        dows.map(function (d) { return '<div class="cal-dow">' + d + '</div>'; }).join("") +
+        cells +
+      '</div>';
+
+    $("#calPrev").addEventListener("click", function () { runtime.calRef = new Date(runtime.calRef.getFullYear(), runtime.calRef.getMonth() - 1, 1); renderCalendar(); });
+    $("#calNext").addEventListener("click", function () { runtime.calRef = new Date(runtime.calRef.getFullYear(), runtime.calRef.getMonth() + 1, 1); renderCalendar(); });
+    $("#calToday").addEventListener("click", function () { runtime.calRef = startOfMonth(new Date()); renderCalendar(); });
+    var cs = $("#calSync"); if (cs) cs.addEventListener("click", function () { syncGoogleEvents(true); });
+    $all("#view-calendar .cal-cell").forEach(function (cell) {
+      cell.addEventListener("click", function (e) {
+        if (e.target.closest("[data-edit-activity]")) return;
+        openActivityModal(null, { datetime: cell.dataset.day + "T10:00" });
+      });
+    });
+  }
+
+  // ============ SETTINGS ============
+  function renderSettings() {
+    var connected = !!runtime.token;
+    var s = state.settings;
+    var gStatus, gClass;
+    if (connected) { gStatus = "Conectado · sincronizando con tu calendario principal"; gClass = "ok"; }
+    else if (runtime.gsi === false) { gStatus = "Google no está disponible en este entorno (sandbox). Abre esta app desde tu propio servidor local para conectar."; gClass = "warn"; }
+    else { gStatus = "No conectado"; gClass = "off"; }
+
+    $("#view-settings").innerHTML =
+      '<div class="set-card">' +
+        '<h3>Google Calendar</h3>' +
+        '<p class="desc">Sincroniza tus actividades del CRM con Google Calendar. Se usa el flujo OAuth 2.0 del navegador (token de acceso, sin secreto de cliente) y sólo el permiso <code>calendar.events</code>.</p>' +
+        '<div class="status-line ' + gClass + '"><span class="sd"></span>' + esc(gStatus) + '</div>' +
+        '<div class="field"><label for="gClient">OAuth Client ID</label>' +
+          '<input id="gClient" type="text" placeholder="1234567890-abcd….apps.googleusercontent.com" value="' + esc(s.googleClientId || "") + '" autocomplete="off" spellcheck="false"></div>' +
+        '<div style="display:flex;gap:8px;margin-top:14px">' +
+          (connected
+            ? '<button class="btn" id="gDisconnect">Desconectar</button><button class="btn primary" id="gSync">Sincronizar ahora</button>'
+            : '<button class="btn primary" id="gConnect">Conectar Google Calendar</button>') +
+        '</div>' +
+        '<details class="help"><summary>Cómo obtener un Client ID</summary><ol>' +
+          '<li>Entra en <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">Google Cloud Console</a> y crea (o elige) un proyecto.</li>' +
+          '<li>Activa la <strong>Google Calendar API</strong> en «APIs y servicios».</li>' +
+          '<li>En «Credenciales» crea un <strong>ID de cliente de OAuth</strong> de tipo <em>Aplicación web</em>.</li>' +
+          '<li>Añade tu origen en <strong>Orígenes de JavaScript autorizados</strong>, p. ej. <code>http://localhost:8000</code>.</li>' +
+          '<li>Copia el Client ID aquí y pulsa «Conectar».</li>' +
+        '</ol><p style="color:var(--muted);font-size:12.5px;margin:0 0 12px">Nota: la versión publicada como Artifact corre aislada y no puede hablar con Google. Descarga el archivo <code>.html</code> y ábrelo desde <code>http://localhost</code> para la sincronización real.</p></details>' +
+      '</div>' +
+
+      '<div class="set-card">' +
+        '<h3>Apariencia</h3>' +
+        '<p class="desc">Tema de la interfaz.</p>' +
+        '<div class="seg" id="themeSeg">' +
+          ['system', 'light', 'dark'].map(function (t) {
+            return '<button data-theme="' + t + '" class="' + (s.theme === t ? "on" : "") + '">' + ({ system: "Sistema", light: "Claro", dark: "Oscuro" }[t]) + '</button>';
+          }).join("") +
+        '</div>' +
+      '</div>' +
+
+      '<div class="set-card">' +
+        '<h3>Equipo</h3>' +
+        '<p class="desc">Empleados con acceso a este espacio. Cada uno entra con su ID, correo y clave. Se guardan en este navegador.</p>' +
+        '<div class="status-line ok"><span class="sd"></span>Sesión iniciada como <strong>&nbsp;' + esc((currentEmployee() || {}).name || "—") + '</strong>&nbsp;· ' + esc((currentEmployee() || {}).email || "") + '</div>' +
+        (state.employees || []).map(function (e) {
+          var me = currentEmployee();
+          return '<div class="emp-row"><div class="avatar" style="width:26px;height:26px;font-size:10px">' + esc(initials(e.name).toUpperCase()) + '</div>' +
+            '<div style="flex:1;min-width:0"><div style="font-weight:600">' + esc(e.name) + (me && me.id === e.id ? ' <span class="you">tú</span>' : '') + '</div>' +
+            '<div class="emp-id">' + esc(e.id) + ' · ' + esc(e.email) + '</div></div>' +
+            (me && me.id === e.id ? '' : '<button class="btn danger sm" data-rm-emp="' + esc(e.id) + '">Quitar</button>') +
+          '</div>';
+        }).join("") +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">' +
+          '<button class="btn" id="addEmpBtn">Registrar empleado</button>' +
+          '<button class="btn danger" id="logoutBtn">Cerrar sesión</button>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="set-card">' +
+        '<h3>Datos</h3>' +
+        '<p class="desc">Tus datos se guardan sólo en este navegador (localStorage).</p>' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
+          '<button class="btn" id="ieBtn2">Importar / exportar contactos</button>' +
+          '<button class="btn" id="exportBtn">Ver copia (JSON)</button>' +
+          '<button class="btn" id="reseedBtn">Restablecer datos de ejemplo</button>' +
+          '<button class="btn danger" id="wipeBtn">Borrar todo</button>' +
+        '</div>' +
+        '<textarea id="exportArea" hidden readonly style="width:100%;margin-top:12px;min-height:140px;font-family:var(--mono);font-size:11px;padding:10px;border:1px solid var(--border-strong);border-radius:8px;background:var(--surface-2);color:var(--ink)"></textarea>' +
+      '</div>';
+
+    $("#gClient").addEventListener("change", function () { state.settings.googleClientId = this.value.trim(); save(); });
+    var gc = $("#gConnect"); if (gc) gc.addEventListener("click", connectGoogle);
+    var gd = $("#gDisconnect"); if (gd) gd.addEventListener("click", disconnectGoogle);
+    var gs = $("#gSync"); if (gs) gs.addEventListener("click", function () { syncGoogleEvents(true); });
+    $all("#themeSeg button").forEach(function (b) {
+      b.addEventListener("click", function () { state.settings.theme = b.dataset.theme; save(); applyTheme(); updateThemeToggle(); renderSettings(); });
+    });
+    $("#ieBtn2").addEventListener("click", openImportExport);
+    $("#addEmpBtn").addEventListener("click", openEmployeeModal);
+    $("#logoutBtn").addEventListener("click", logout);
+    $all("#view-settings [data-rm-emp]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var eid = b.dataset.rmEmp;
+        var emp = (state.employees || []).find(function (x) { return x.id === eid; });
+        if (!emp) return;
+        if (!confirm("¿Quitar el acceso de " + emp.name + "?")) return;
+        state.employees = state.employees.filter(function (x) { return x.id !== eid; });
+        save(); renderSettings(); toast("Empleado quitado");
+      });
+    });
+    $("#exportBtn").addEventListener("click", function () {
+      var a = $("#exportArea");
+      a.hidden = !a.hidden;
+      a.value = JSON.stringify({ contacts: state.contacts, deals: state.deals, activities: state.activities }, null, 2);
+      if (!a.hidden) { a.focus(); a.select(); }
+    });
+    $("#reseedBtn").addEventListener("click", function () {
+      if (!confirm("¿Restablecer todos los datos a los de ejemplo? Se perderán tus cambios.")) return;
+      var keepEmp = state.employees, keepSession = state.session;
+      state = seed();
+      state.employees = keepEmp && keepEmp.length ? keepEmp : state.employees;
+      state.session = keepSession || state.session;
+      save(); applyTheme(); refresh(); toast("Datos de ejemplo restablecidos");
+    });
+    $("#wipeBtn").addEventListener("click", function () {
+      if (!confirm("¿Borrar todos los contactos, negocios y actividades? (Los accesos de empleados se conservan.)")) return;
+      state = { contacts: [], deals: [], activities: [], employees: state.employees, session: state.session, settings: state.settings, isDemo: false };
+      save(); refresh(); toast("Datos borrados");
+    });
+  }
+
+  function openEmployeeModal() {
+    openModal("Registrar empleado", [
+      { name: "empId", label: "ID de empleado", required: true },
+      { name: "name", label: "Nombre completo", required: true },
+      { name: "email", label: "Correo", type: "email", required: true },
+      { name: "pass", label: "Clave", type: "password", required: true },
+      { name: "pass2", label: "Repite la clave", type: "password", required: true }
+    ], function (f) {
+      var res = createEmployee(f);
+      if (typeof res === "string") { toast(res); return; }
+      save(); closeModal();
+      if (currentView === "settings") renderSettings();
+      toast("Empleado registrado: " + res.name);
+    });
+  }
+
+  // ============ GOOGLE CALENDAR ============
+  function loadGsi() {
+    var s = document.createElement("script");
+    s.src = "https://accounts.google.com/gsi/client";
+    s.async = true; s.defer = true;
+    s.onload = function () {
+      runtime.gsi = !!(window.google && google.accounts && google.accounts.oauth2);
+      if (currentView === "settings") renderSettings();
+      updateGooglePill();
+    };
+    s.onerror = function () { runtime.gsi = false; if (currentView === "settings") renderSettings(); updateGooglePill(); };
+    document.head.appendChild(s);
+    setTimeout(function () {
+      if (runtime.gsi === undefined) { runtime.gsi = false; if (currentView === "settings") renderSettings(); updateGooglePill(); }
+    }, 4000);
+  }
+
+  function connectGoogle() {
+    var cid = (state.settings.googleClientId || "").trim();
+    if (!cid) { toast("Introduce tu OAuth Client ID"); return; }
+    if (!runtime.gsi) { toast("Google no está disponible en este entorno"); return; }
+    try {
+      runtime.tokenClient = google.accounts.oauth2.initTokenClient({
+        client_id: cid,
+        scope: GOOGLE_SCOPE,
+        callback: function (resp) {
+          if (resp && resp.access_token) {
+            runtime.token = resp.access_token;
+            runtime.tokenExp = Date.now() + (Number(resp.expires_in || 3600) * 1000);
+            toast("Google Calendar conectado");
+            if (currentView === "settings") renderSettings();
+            updateGooglePill();
+            syncGoogleEvents(false);
+          } else {
+            toast("No se pudo autorizar");
+          }
+        }
+      });
+      runtime.tokenClient.requestAccessToken();
+    } catch (e) {
+      toast("Error al iniciar OAuth: " + e.message);
+    }
+  }
+  function disconnectGoogle() {
+    if (runtime.token && window.google && google.accounts && google.accounts.oauth2) {
+      try { google.accounts.oauth2.revoke(runtime.token); } catch (e) {}
+    }
+    runtime.token = null; runtime.tokenExp = 0; runtime.gEvents = [];
+    if (currentView === "settings") renderSettings();
+    if (currentView === "calendar") renderCalendar();
+    updateGooglePill();
+    toast("Google Calendar desconectado");
+  }
+  function tokenValid() { return runtime.token && Date.now() < runtime.tokenExp; }
+
+  function syncGoogleEvents(loud) {
+    if (!tokenValid()) { if (loud) toast("Conecta Google Calendar primero"); return; }
+    var ref = runtime.calRef;
+    var timeMin = new Date(ref.getFullYear(), ref.getMonth() - 1, 1).toISOString();
+    var timeMax = new Date(ref.getFullYear(), ref.getMonth() + 2, 1).toISOString();
+    var url = "https://www.googleapis.com/calendar/v3/calendars/primary/events?singleEvents=true&orderBy=startTime&maxResults=250" +
+      "&timeMin=" + encodeURIComponent(timeMin) + "&timeMax=" + encodeURIComponent(timeMax);
+    fetch(url, { headers: { Authorization: "Bearer " + runtime.token } })
+      .then(function (r) {
+        if (r.status === 401) { runtime.token = null; throw new Error("Sesión de Google expirada"); }
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (data) {
+        runtime.gEvents = (data.items || []).filter(function (e) { return e.status !== "cancelled"; });
+        if (currentView === "calendar") renderCalendar();
+        if (loud) toast(runtime.gEvents.length + " eventos de Google cargados");
+      })
+      .catch(function (err) {
+        if (currentView === "settings") renderSettings();
+        updateGooglePill();
+        toast("Google: " + err.message + " (¿entorno restringido?)");
+      });
+  }
+
+  function pushActivityToGoogle(a) {
+    if (!tokenValid()) { toast("Conecta Google Calendar primero"); go("settings"); return; }
+    var start = new Date(a.datetime);
+    var end = new Date(start.getTime() + (a.durationMin || 30) * 60000);
+    var c = contactById(a.contactId);
+    var body = {
+      summary: a.title,
+      description: (c ? "Contacto: " + c.name + " (" + (c.email || "") + ")\n" : "") + (a.notes || "") + "\n— 3D Products Chile CRM",
+      start: { dateTime: start.toISOString() },
+      end: { dateTime: end.toISOString() }
+    };
+    fetch("https://www.googleapis.com/calendar/v3/calendars/primary/events", {
+      method: "POST",
+      headers: { Authorization: "Bearer " + runtime.token, "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (ev) {
+        a.googleEventId = ev.id; save(); refresh();
+        toast("Añadido a Google Calendar");
+      })
+      .catch(function (err) { toast("No se pudo crear el evento: " + err.message); });
+  }
+
+  function updateGooglePill() {
+    var pill = $("#gPill"), txt = $("#gPillText");
+    if (tokenValid()) { pill.classList.add("on"); txt.textContent = "Google · conectado"; }
+    else if (runtime.gsi === false) { pill.classList.remove("on"); txt.textContent = "Google · no disponible"; }
+    else { pill.classList.remove("on"); txt.textContent = "Google · conectar"; }
+  }
+
+  // ============ MODALS ============
+  var modalSubmit = null;
+  function resetModalChrome() {
+    $("#modalSave").style.display = "";
+    $("#modalSave").textContent = "Guardar";
+    $("#modalCancel").textContent = "Cancelar";
+  }
+  function openModal(title, fields, onSubmit) {
+    resetModalChrome();
+    $("#modalTitle").textContent = title;
+    $("#modalBody").innerHTML = fields.map(fieldHtml).join("");
+    modalSubmit = onSubmit;
+    $("#modalScrim").classList.add("on");
+    $("#modal").classList.add("on");
+    var first = $("#modalBody input:not([type=checkbox]), #modalBody select, #modalBody textarea");
+    if (first) setTimeout(function () { first.focus(); }, 40);
+  }
+  function openModalRaw(title, html, onSubmit) {
+    resetModalChrome();
+    $("#modalTitle").textContent = title;
+    $("#modalBody").innerHTML = html;
+    modalSubmit = onSubmit;
+    $("#modalScrim").classList.add("on");
+    $("#modal").classList.add("on");
+  }
+  function closeModal() {
+    $("#modalScrim").classList.remove("on");
+    $("#modal").classList.remove("on");
+    modalSubmit = null;
+    resetModalChrome();
+  }
+  function fieldHtml(f) {
+    var v = f.value == null ? "" : f.value;
+    if (f.type === "checkbox") {
+      return '<label class="field" style="flex-direction:row;align-items:center;gap:9px;cursor:pointer">' +
+        '<input type="checkbox" name="' + f.name + '"' + (v ? " checked" : "") + ' style="width:16px;height:16px;flex:none">' +
+        '<span style="font-size:13px;font-weight:600;color:var(--ink-soft)">' + esc(f.label) + '</span></label>';
+    }
+    var inner;
+    if (f.type === "select") {
+      inner = '<select name="' + f.name + '"' + (f.required ? " required" : "") + '>' +
+        f.options.map(function (o) { return '<option value="' + esc(o.value) + '"' + (String(o.value) === String(v) ? " selected" : "") + '>' + esc(o.label) + '</option>'; }).join("") +
+        '</select>';
+    } else if (f.type === "textarea") {
+      inner = '<textarea name="' + f.name + '" placeholder="' + esc(f.placeholder || "") + '">' + esc(v) + '</textarea>';
+    } else {
+      inner = '<input type="' + (f.type || "text") + '" name="' + f.name + '" value="' + esc(v) + '" placeholder="' + esc(f.placeholder || "") + '"' + (f.required ? " required" : "") + (f.step ? ' step="' + f.step + '"' : "") + '>';
+    }
+    return '<div class="field"><label>' + esc(f.label) + '</label>' + inner + '</div>';
+  }
+  function readForm() {
+    var out = {};
+    $all("#modalBody [name]").forEach(function (el) {
+      out[el.name] = el.type === "checkbox" ? el.checked : el.value.trim();
+    });
+    return out;
+  }
+
+  function openContactModal(c) {
+    c = c || null;
+    openModal(c ? "Editar contacto" : "Nuevo contacto", [
+      { name: "name", label: "Nombre", required: true, value: c && c.name },
+      { name: "company", label: "Empresa", value: c && c.company },
+      { name: "email", label: "Email", type: "email", value: c && c.email },
+      { name: "phone", label: "Teléfono", type: "tel", value: c && c.phone },
+      { name: "tags", label: "Etiquetas (separadas por coma)", value: c && (c.tags || []).join(", ") }
+    ], function (f) {
+      var tags = f.tags ? f.tags.split(",").map(function (t) { return t.trim(); }).filter(Boolean) : [];
+      var me = currentEmployee();
+      if (c) { Object.assign(c, { name: f.name, company: f.company, email: f.email, phone: f.phone, tags: tags }); }
+      else { state.contacts.push({ id: uid("c"), name: f.name, company: f.company, email: f.email, phone: f.phone, tags: tags, owner: me ? me.name : "" }); }
+      state.isDemo = false; save(); closeModal(); refresh();
+      toast(c ? "Contacto actualizado" : "Contacto creado");
+    });
+  }
+
+  function openDealModal(d) {
+    d = d || null;
+    var contactOpts = [{ value: "", label: "— Sin contacto —" }].concat(state.contacts.map(function (c) { return { value: c.id, label: c.name + " · " + c.company }; }));
+    openModal(d ? "Editar negocio" : "Nuevo negocio", [
+      { name: "title", label: "Título", required: true, value: d && d.title, placeholder: "Ej. Plan Pro anual — Empresa" },
+      { name: "value", label: "Valor (CLP)", type: "number", step: "1000", value: d && d.value },
+      { name: "stage", label: "Etapa", type: "select", value: d ? d.stage : "nuevo", options: STAGES.map(function (s) { return { value: s.id, label: s.label }; }) },
+      { name: "contactId", label: "Contacto", type: "select", value: d && d.contactId, options: contactOpts },
+      { name: "closeDate", label: "Cierre previsto", type: "date", value: d && d.closeDate ? d.closeDate.slice(0, 10) : "" }
+    ], function (f) {
+      var payload = {
+        title: f.title, value: Number(f.value) || 0, stage: f.stage,
+        contactId: f.contactId || null,
+        closeDate: f.closeDate ? new Date(f.closeDate + "T00:00:00").toISOString() : null
+      };
+      if (d) Object.assign(d, payload);
+      else state.deals.push(Object.assign({ id: uid("d") }, payload));
+      state.isDemo = false; save(); closeModal(); refresh();
+      toast(d ? "Negocio actualizado" : "Negocio creado");
+    });
+  }
+
+  function openActivityModal(a, preset) {
+    a = a || null; preset = preset || {};
+    var contactOpts = [{ value: "", label: "— Sin contacto —" }].concat(state.contacts.map(function (c) { return { value: c.id, label: c.name }; }));
+    var dealOpts = [{ value: "", label: "— Sin negocio —" }].concat(state.deals.map(function (d) { return { value: d.id, label: d.title }; }));
+    var dtv = a ? toLocalInput(a.datetime) : (preset.datetime || toLocalInput(new Date(Date.now() + 3600000).toISOString()));
+    var syncDefault = a ? !!a.googleEventId : (preset.gsync != null ? preset.gsync : tokenValid());
+    openModal(a ? "Editar actividad" : (preset.type === "reunion" ? "Agendar reunión" : "Nueva actividad"), [
+      { name: "title", label: "Título", required: true, value: (a && a.title) || preset.title },
+      { name: "type", label: "Tipo", type: "select", value: a ? a.type : (preset.type || "reunion"), options: TYPES.map(function (t) { return { value: t.id, label: t.label }; }) },
+      { name: "datetime", label: "Fecha y hora", type: "datetime-local", required: true, value: dtv },
+      { name: "durationMin", label: "Duración (min)", type: "number", step: "15", value: a ? a.durationMin : 45 },
+      { name: "contactId", label: "Contacto", type: "select", value: (a && a.contactId) || preset.contactId, options: contactOpts },
+      { name: "dealId", label: "Negocio", type: "select", value: (a && a.dealId) || preset.dealId, options: dealOpts },
+      { name: "notes", label: "Notas", type: "textarea", value: a && a.notes },
+      { name: "gsync", label: "Añadir a Google Calendar al guardar", type: "checkbox", value: syncDefault }
+    ], function (f) {
+      var isNew = !a;
+      var payload = {
+        title: f.title, type: f.type,
+        datetime: new Date(f.datetime).toISOString(),
+        durationMin: Number(f.durationMin) || 30,
+        contactId: f.contactId || null, dealId: f.dealId || null, notes: f.notes || ""
+      };
+      if (a) Object.assign(a, payload);
+      else { a = Object.assign({ id: uid("a"), done: false, googleEventId: null }, payload); state.activities.push(a); }
+      state.isDemo = false; save(); closeModal(); refresh();
+      toast(isNew ? "Actividad creada" : "Actividad guardada");
+      if (f.gsync && !a.googleEventId) maybeSyncActivity(a);
+    });
+  }
+  function maybeSyncActivity(a) {
+    if (tokenValid()) { pushActivityToGoogle(a); }
+    else if (runtime.gsi === false) { toast("Guardado en el CRM · Google no disponible en este entorno"); }
+    else { toast("Guardado · conecta Google Calendar en Configuración para sincronizar"); }
+  }
+  function toLocalInput(iso) {
+    var d = new Date(iso);
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0") +
+      "T" + String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+  }
+
+  // ============ DRAWER (contact detail) ============
+  function openContactDrawer(id) {
+    var c = contactById(id);
+    if (!c) return;
+    var deals = state.deals.filter(function (d) { return d.contactId === id; });
+    var acts = state.activities.filter(function (a) { return a.contactId === id; }).sort(function (a, b) { return new Date(b.datetime) - new Date(a.datetime); });
+    $("#drawer").innerHTML =
+      '<div class="drawer-head">' +
+        '<div class="avatar lg">' + esc(initials(c.name).toUpperCase()) + '</div>' +
+        '<div style="flex:1;min-width:0">' +
+          '<h3 style="font-size:16px">' + esc(c.name) + '</h3>' +
+          '<div class="cell-sub">' + esc(c.company || "—") + '</div>' +
+          '<div style="margin-top:6px">' + (c.tags || []).map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join(" ") + '</div>' +
+        '</div>' +
+        '<button class="btn ghost sm" id="drawerClose" aria-label="Cerrar">✕</button>' +
+      '</div>' +
+      '<div class="drawer-body">' +
+        '<h4>Contacto</h4>' +
+        '<dl class="kv">' +
+          '<dt>Email</dt><dd>' + esc(c.email || "—") + '</dd>' +
+          '<dt>Teléfono</dt><dd>' + esc(c.phone || "—") + '</dd>' +
+          '<dt>Propietario</dt><dd>' + esc(c.owner || "—") + '</dd>' +
+        '</dl>' +
+        '<div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">' +
+          '<button class="btn primary sm" id="drawerMeet"><svg width="13" height="13" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M2 6.5h12M5.5 1.5v3M10.5 1.5v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg> Agendar reunión</button>' +
+          '<button class="btn sm" id="drawerEdit">Editar</button>' +
+          '<button class="btn sm" id="drawerNewDeal">Nuevo negocio</button>' +
+          '<button class="btn sm" id="drawerNewAct">Actividad</button>' +
+        '</div>' +
+        '<h4>Negocios (' + deals.length + ')</h4>' +
+        (deals.length ? deals.map(function (d) {
+          return '<div class="mini-deal" data-open-deal="' + d.id + '" style="cursor:pointer">' +
+            '<div><div style="font-weight:600;font-size:12.5px">' + esc(d.title.split(" — ")[0]) + '</div>' +
+            '<span class="badge s-' + d.stage + '">' + esc(stageLabel(d.stage)) + '</span></div>' +
+            '<span class="d-val" style="font-weight:700;font-size:12.5px">' + fmtMoney(d.value) + '</span></div>';
+        }).join("") : '<div class="cell-sub">Sin negocios.</div>') +
+        '<h4>Actividades (' + acts.length + ')</h4>' +
+        (acts.length ? acts.slice(0, 12).map(function (a) {
+          return '<div class="row-item" data-edit-activity="' + a.id + '" style="cursor:pointer">' +
+            '<div class="type-ic ' + a.type + '">' + typeIconSvg(a.type) + '</div>' +
+            '<div class="ri-body"><div class="ri-title">' + esc(a.title) + '</div>' +
+            '<div class="ri-meta">' + fmtDate(a.datetime) + ' · ' + fmtTime(a.datetime) + (a.done ? ' · hecho' : '') + '</div></div></div>';
+        }).join("") : '<div class="cell-sub">Sin actividades.</div>') +
+        '<div style="margin-top:24px"><button class="btn danger sm" id="drawerDelete">Eliminar contacto</button></div>' +
+      '</div>';
+
+    $("#drawerScrim").classList.add("on");
+    $("#drawer").classList.add("on");
+    $("#drawerClose").addEventListener("click", closeDrawer);
+    $("#drawerEdit").addEventListener("click", function () { closeDrawer(); openContactModal(c); });
+    $("#drawerNewDeal").addEventListener("click", function () { closeDrawer(); openDealModal({ contactId: id, stage: "nuevo", value: 0, title: "" }); });
+    $("#drawerNewAct").addEventListener("click", function () { closeDrawer(); openActivityModal(null, { contactId: id }); });
+    $("#drawerMeet").addEventListener("click", function () {
+      closeDrawer();
+      openActivityModal(null, { type: "reunion", contactId: id, title: "Reunión con " + c.name, gsync: true });
+    });
+    $("#drawerDelete").addEventListener("click", function () {
+      if (!confirm("¿Eliminar a " + c.name + "? También se eliminan sus negocios y actividades.")) return;
+      state.deals = state.deals.filter(function (d) { return d.contactId !== id; });
+      state.activities = state.activities.filter(function (a) { return a.contactId !== id; });
+      state.contacts = state.contacts.filter(function (x) { return x.id !== id; });
+      state.isDemo = false; save(); closeDrawer(); refresh(); toast("Contacto eliminado");
+    });
+    $all("#drawer [data-open-deal]").forEach(function (el) {
+      el.addEventListener("click", function () { closeDrawer(); openDealModal(dealById(el.dataset.openDeal)); });
+    });
+    $all("#drawer [data-edit-activity]").forEach(function (el) {
+      el.addEventListener("click", function () { closeDrawer(); openActivityModal(state.activities.find(function (a) { return a.id === el.dataset.editActivity; })); });
+    });
+  }
+  function closeDrawer() {
+    $("#drawerScrim").classList.remove("on");
+    $("#drawer").classList.remove("on");
+  }
+
+  // ============ THEME ============
+  function applyTheme() {
+    var t = state.settings.theme || "system";
+    if (t === "system") document.documentElement.removeAttribute("data-theme");
+    else document.documentElement.setAttribute("data-theme", t);
+  }
+
+  // ============ GLOBAL EVENTS ============
+  document.addEventListener("click", function (e) {
+    var t = e.target;
+
+    var oc = t.closest("[data-open-contact]");
+    if (oc) { openContactDrawer(oc.dataset.openContact); return; }
+
+    var od = t.closest("[data-open-deal]");
+    if (od && !t.closest("#drawer")) { openDealModal(dealById(od.dataset.openDeal)); return; }
+
+    var oa = t.closest("[data-open-activity]");
+    if (oa) { var act = state.activities.find(function (a) { return a.id === oa.dataset.openActivity; }); if (act) openActivityModal(act); return; }
+
+    var tg = t.closest("[data-toggle]");
+    if (tg) {
+      e.stopPropagation();
+      var a = state.activities.find(function (x) { return x.id === tg.dataset.toggle; });
+      if (a) { a.done = !a.done; state.isDemo = false; save(); refresh(); }
+      return;
+    }
+
+    var gc = t.closest("[data-gcal]");
+    if (gc) {
+      e.stopPropagation();
+      var ga = state.activities.find(function (x) { return x.id === gc.dataset.gcal; });
+      if (ga) pushActivityToGoogle(ga);
+      return;
+    }
+
+    var ea = t.closest("[data-edit-activity]");
+    if (ea && !t.closest("#drawer") && currentView !== "calendar") {
+      var eact = state.activities.find(function (x) { return x.id === ea.dataset.editActivity; });
+      if (eact) openActivityModal(eact);
+      return;
+    }
+    if (ea && currentView === "calendar") {
+      var cact = state.activities.find(function (x) { return x.id === ea.dataset.editActivity; });
+      if (cact) openActivityModal(cact);
+      return;
+    }
+  });
+
+  // nav
+  $all(".nav-item[data-nav]").forEach(function (b) { b.addEventListener("click", function () { go(b.dataset.nav); }); });
+  $("#hamburger").addEventListener("click", function () { $("#sidebar").classList.toggle("on"); $("#navScrim").classList.toggle("on"); });
+  $("#navScrim").addEventListener("click", function () { $("#sidebar").classList.remove("on"); $("#navScrim").classList.remove("on"); });
+
+  // new menu
+  $("#newBtn").addEventListener("click", function (e) { e.stopPropagation(); $("#newMenu").hidden = !$("#newMenu").hidden; });
+  document.addEventListener("click", function () { $("#newMenu").hidden = true; });
+  $("#newMenu").addEventListener("click", function (e) {
+    var b = e.target.closest("[data-new]"); if (!b) return;
+    if (b.dataset.new === "contact") openContactModal(null);
+    else if (b.dataset.new === "deal") openDealModal(null);
+    else openActivityModal(null, {});
+  });
+
+  // global search -> contacts
+  $("#globalSearch").addEventListener("input", function () {
+    contactQuery = this.value;
+    if (currentView !== "contacts") go("contacts");
+    else renderContacts();
+  });
+
+  // google pill
+  $("#gPill").addEventListener("click", function () { go("settings"); });
+  $("#gPill").addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go("settings"); } });
+
+  // modal
+  $("#modalForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (modalSubmit) {
+      var form = $("#modalForm");
+      if (!form.reportValidity()) return;
+      modalSubmit(readForm());
+    }
+  });
+  $("#modalCancel").addEventListener("click", closeModal);
+  $("#modalScrim").addEventListener("click", closeModal);
+  $("#drawerScrim").addEventListener("click", closeDrawer);
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { closeModal(); closeDrawer(); $("#newMenu").hidden = true; }
+  });
+
+  // demo banner
+  $("#clearDemo").addEventListener("click", function () {
+    state = { contacts: [], deals: [], activities: [], employees: state.employees, session: state.session, settings: state.settings, isDemo: false };
+    save(); $("#demoBanner").hidden = true; refresh();
+  });
+
+  // theme toggle
+  $("#themeToggle").addEventListener("click", toggleTheme);
+  $("#authTheme").addEventListener("click", toggleTheme);
+  if (window.matchMedia) {
+    try {
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () {
+        if ((state.settings.theme || "system") === "system") { applyTheme(); updateThemeToggle(); }
+      });
+    } catch (e) {}
+  }
+
+  // auth
+  $all("#authView .auth-tabs button").forEach(function (b) {
+    b.addEventListener("click", function () { authTab = b.dataset.tab; renderAuthForm(); });
+  });
+  $("#authForm").addEventListener("submit", submitAuth);
+
+  // ============ INIT ============
+  function bootApp() {
+    $("#demoBanner").hidden = !state.isDemo;
+    renderMe();
+    updateThemeToggle();
+    updateGooglePill();
+    go(location.hash.slice(1) || "dashboard");
+    var me = currentEmployee();
+    if (me) setTimeout(function () { toast(greeting() + ", " + firstName(me.name)); }, 400);
+  }
+  try { document.documentElement.lang = LOCALE; } catch (e) {}
+  var ms = $("#brandMarkSide"); if (ms) ms.innerHTML = LOGO_SVG;
+  var ma = $("#brandMarkAuth"); if (ma) ma.innerHTML = LOGO_SVG;
+  applyTheme();
+  updateThemeToggle();
+  loadGsi();
+  if (currentEmployee()) { bootApp(); }
+  else { showAuth(); }
+})();
+</script>
+</body>
+</html>

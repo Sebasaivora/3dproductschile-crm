@@ -715,7 +715,7 @@
   "use strict";
 
   // ============ CONSTANTS ============
-  var STORE_KEY = "cadencia-crm-v4-cl";
+  var STORE_KEY = "cadencia-crm-v5-team";
   var GOOGLE_SCOPE = "https://www.googleapis.com/auth/calendar.events";
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   // Localización: todo Chile
@@ -820,13 +820,17 @@
         done: r[6], googleEventId: null, notes: ""
       };
     });
-    var demoEmp = {
-      id: "admin", name: "Sofía Fuenzalida", email: "sofia@3dproductschile.cl",
-      salt: "demo", hash: hashPass("cadencia", "demo"), createdAt: now.toISOString(), demoSeed: true
-    };
+    var employees = [
+      { id: "sebastian", name: "Sebastián Fuenzalida", email: "sfuenzalidarives@gmail.com", role: "Admin Dev",
+        salt: "s1", hash: hashPass("SebasDev#2026", "s1"), createdAt: now.toISOString() },
+      { id: "camilo", name: "Camilo Solórzano C.", email: "info@3dproductschile.cl", role: "Área Comercial y Atención al Cliente",
+        salt: "s2", hash: hashPass("ComercialCS#2026", "s2"), createdAt: now.toISOString() },
+      { id: "thamara", name: "Thamara Lathapia", email: "contacto@3dproductschile.cl", role: "Administración",
+        salt: "s3", hash: hashPass("ThamaraAdm#2026", "s3"), createdAt: now.toISOString() }
+    ];
     return {
       contacts: contacts, deals: deals, activities: activities,
-      employees: [demoEmp], session: { employeeId: "admin" },
+      employees: employees, session: { employeeId: "sebastian" },
       settings: { googleClientId: "", theme: "system" },
       isDemo: true
     };
@@ -935,7 +939,7 @@
     if ((state.employees || []).some(function (e) { return e.id.toLowerCase() === id.toLowerCase(); })) return "Ese ID ya está en uso.";
     if ((state.employees || []).some(function (e) { return (e.email || "").toLowerCase() === email.toLowerCase(); })) return "Ese correo ya está registrado.";
     var salt = Math.random().toString(36).slice(2, 10);
-    var emp = { id: id, name: f.name.trim(), email: email, salt: salt, hash: hashPass(f.pass, salt), createdAt: new Date().toISOString() };
+    var emp = { id: id, name: f.name.trim(), email: email, role: (f.role || "").trim(), salt: salt, hash: hashPass(f.pass, salt), createdAt: new Date().toISOString() };
     state.employees.push(emp);
     return emp;
   }
@@ -963,6 +967,7 @@
       : [
           { name: "empId", label: "ID de empleado", ph: "p. ej. mgomez", req: true },
           { name: "name", label: "Nombre completo", req: true },
+          { name: "role", label: "Cargo", ph: "p. ej. Área Comercial", req: false },
           { name: "email", label: "Correo", type: "email", req: true },
           { name: "pass", label: "Clave", type: "password", req: true },
           { name: "pass2", label: "Repite la clave", type: "password", req: true }
@@ -976,9 +981,7 @@
       '<button type="submit" class="btn primary" style="justify-content:center;padding:11px">' +
       (login ? "Entrar" : "Crear acceso y entrar") + '</button>';
     var hint = $("#authHint");
-    if (state.isDemo && (state.employees || []).some(function (e) { return e.demoSeed; })) {
-      hint.innerHTML = 'Acceso de prueba — ID <code>admin</code> · clave <code>cadencia</code>';
-    } else { hint.textContent = ""; }
+    hint.textContent = "";
     var first = $("#authForm input");
     if (first) setTimeout(function () { first.focus(); }, 30);
   }
@@ -993,7 +996,7 @@
       state.session = { employeeId: emp.id };
       save(); hideAuth(); bootApp();
     } else {
-      var res = createEmployee({ empId: f.empId, name: f.name, email: f.email, pass: f.pass, pass2: f.pass2 });
+      var res = createEmployee({ empId: f.empId, name: f.name, role: f.role, email: f.email, pass: f.pass, pass2: f.pass2 });
       if (typeof res === "string") { err.textContent = res; return; }
       state.session = { employeeId: res.id };
       save(); hideAuth(); bootApp();
@@ -1011,7 +1014,7 @@
     if (!e) { box.innerHTML = ""; return; }
     box.innerHTML =
       '<div class="avatar">' + esc(initials(e.name).toUpperCase()) + '</div>' +
-      '<div class="me-info"><div class="me-name">' + esc(e.name) + '</div><div class="me-mail">' + esc(e.email) + '</div></div>' +
+      '<div class="me-info"><div class="me-name">' + esc(e.name) + '</div><div class="me-mail">' + esc(e.role || e.email) + '</div></div>' +
       '<button class="me-out" id="meOut" title="Cerrar sesión" aria-label="Cerrar sesión">' +
         '<svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M6 2.5H3.5A1.5 1.5 0 0 0 2 4v8a1.5 1.5 0 0 0 1.5 1.5H6M10.5 11 14 8l-3.5-3M14 8H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
       '</button>';
@@ -1571,12 +1574,13 @@
           var me = currentEmployee();
           return '<div class="emp-row"><div class="avatar" style="width:26px;height:26px;font-size:10px">' + esc(initials(e.name).toUpperCase()) + '</div>' +
             '<div style="flex:1;min-width:0"><div style="font-weight:600">' + esc(e.name) + (me && me.id === e.id ? ' <span class="you">tú</span>' : '') + '</div>' +
-            '<div class="emp-id">' + esc(e.id) + ' · ' + esc(e.email) + '</div></div>' +
+            '<div class="emp-id">' + (e.role ? esc(e.role) + ' · ' : '') + esc(e.id) + ' · ' + esc(e.email) + '</div></div>' +
             (me && me.id === e.id ? '' : '<button class="btn danger sm" data-rm-emp="' + esc(e.id) + '">Quitar</button>') +
           '</div>';
         }).join("") +
         '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">' +
           '<button class="btn" id="addEmpBtn">Registrar empleado</button>' +
+          '<button class="btn" id="changePassBtn">Cambiar mi clave</button>' +
           '<button class="btn danger" id="logoutBtn">Cerrar sesión</button>' +
         '</div>' +
       '</div>' +
@@ -1602,6 +1606,7 @@
     });
     $("#ieBtn2").addEventListener("click", openImportExport);
     $("#addEmpBtn").addEventListener("click", openEmployeeModal);
+    $("#changePassBtn").addEventListener("click", openChangePasswordModal);
     $("#logoutBtn").addEventListener("click", logout);
     $all("#view-settings [data-rm-emp]").forEach(function (b) {
       b.addEventListener("click", function () {
@@ -1638,6 +1643,7 @@
     openModal("Registrar empleado", [
       { name: "empId", label: "ID de empleado", required: true },
       { name: "name", label: "Nombre completo", required: true },
+      { name: "role", label: "Cargo", placeholder: "p. ej. Área Comercial" },
       { name: "email", label: "Correo", type: "email", required: true },
       { name: "pass", label: "Clave", type: "password", required: true },
       { name: "pass2", label: "Repite la clave", type: "password", required: true }
@@ -1647,6 +1653,24 @@
       save(); closeModal();
       if (currentView === "settings") renderSettings();
       toast("Empleado registrado: " + res.name);
+    });
+  }
+
+  function openChangePasswordModal() {
+    var me = currentEmployee();
+    if (!me) return;
+    openModal("Cambiar mi clave", [
+      { name: "current", label: "Clave actual", type: "password", required: true },
+      { name: "next", label: "Clave nueva", type: "password", required: true },
+      { name: "next2", label: "Repite la clave nueva", type: "password", required: true }
+    ], function (f) {
+      if (me.hash !== hashPass(f.current || "", me.salt)) { toast("La clave actual no es correcta"); return; }
+      if ((f.next || "").length < 4) { toast("La clave nueva debe tener al menos 4 caracteres"); return; }
+      if (f.next !== f.next2) { toast("Las claves nuevas no coinciden"); return; }
+      var salt = Math.random().toString(36).slice(2, 10);
+      me.salt = salt; me.hash = hashPass(f.next, salt);
+      save(); closeModal();
+      toast("Clave actualizada");
     });
   }
 

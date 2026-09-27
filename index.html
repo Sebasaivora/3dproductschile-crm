@@ -725,7 +725,7 @@
   "use strict";
 
   // ============ CONSTANTS ============
-  var STORE_KEY = "cadencia-crm-v5-team";
+  var STORE_KEY = "cadencia-crm-v6-clean";
   var GOOGLE_SCOPE = "https://www.googleapis.com/auth/calendar.events";
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   // Localización: todo Chile
@@ -781,55 +781,6 @@
 
   function seed() {
     var now = new Date();
-    function at(offsetDays, hour) {
-      var d = new Date(now.getFullYear(), now.getMonth(), now.getDate() + offsetDays, hour, 0, 0);
-      return d.toISOString();
-    }
-    var contacts = [
-      { id: "c1", name: "Camila Rojas",     company: "Detailing Pro Las Condes",  email: "camila@detailingpro.cl",     phone: "+56 9 6421 8890", tags: ["Taller", "Santiago"],       owner: "Tú" },
-      { id: "c2", name: "Matías Fuentes",   company: "Lavaseco Autos Ñuñoa",      email: "matias@autosnunoa.cl",       phone: "+56 9 8123 4470", tags: ["Lavado"],                  owner: "Tú" },
-      { id: "c3", name: "Francisca Vera",   company: "Automotriz Bravo",          email: "fvera@automotrizbravo.cl",   phone: "+56 2 2445 6031", tags: ["Concesionario", "Cliente"], owner: "Tú" },
-      { id: "c4", name: "Ignacio Soto",     company: "Car Spa Viña del Mar",      email: "ignacio@carspa.cl",          phone: "+56 9 7734 0552", tags: ["Detailing", "Viña"],       owner: "Tú" },
-      { id: "c5", name: "Daniela Muñoz",    company: "Rent a Car Andes",          email: "dmunoz@rentacarandes.cl",    phone: "+56 2 2331 7720", tags: ["Flota"],                   owner: "Tú" },
-      { id: "c6", name: "Sebastián Kast",   company: "Taller 4x4 Temuco",         email: "seba@taller4x4.cl",          phone: "+56 9 5540 3319", tags: ["Taller", "Sur"],           owner: "Tú" },
-      { id: "c7", name: "Valentina Pérez",  company: "Full Brillo Antofagasta",   email: "valentina@fullbrillo.cl",    phone: "+56 9 4220 8871", tags: ["Detailing", "Norte"],      owner: "Tú" },
-      { id: "c8", name: "Rodrigo Díaz",     company: "Comercial Ruta Sur",        email: "rdiaz@rutasur.cl",           phone: "+56 41 218 3340", tags: ["Distribuidor", "Cliente"], owner: "Tú" }
-    ];
-    var deals = [
-      { id: "d1",  title: "Kit cerámico SiO₂ x12 — Detailing Pro",             contactId: "c1", value: 480000,  stage: "nuevo",       closeDate: at(27, 0) },
-      { id: "d2",  title: "Reposición mensual de insumos — Lavaseco Ñuñoa",     contactId: "c2", value: 320000,  stage: "contactado",  closeDate: at(19, 0) },
-      { id: "d3",  title: "Contrato mayorista trimestral — Automotriz Bravo",   contactId: "c3", value: 2650000, stage: "propuesta",   closeDate: at(37, 0) },
-      { id: "d4",  title: "Pack pulido + sellado x20 — Car Spa Viña",           contactId: "c4", value: 890000,  stage: "negociacion", closeDate: at(9, 0) },
-      { id: "d5",  title: "Onboarding de productos + capacitación — Taller 4x4", contactId: "c6", value: 540000,  stage: "contactado",  closeDate: at(22, 0) },
-      { id: "d6",  title: "Línea completa de detailing — Full Brillo",          contactId: "c7", value: 1780000, stage: "propuesta",   closeDate: at(32, 0) },
-      { id: "d7",  title: "Renovación anual de distribución — Ruta Sur",        contactId: "c8", value: 4200000, stage: "negociacion", closeDate: at(5, 0) },
-      { id: "d8",  title: "Pedido adicional shampoo pH neutro — Automotriz Bravo", contactId: "c3", value: 610000, stage: "ganado",    closeDate: at(-14, 0) },
-      { id: "d9",  title: "Prueba piloto de revestimiento — Rent a Car Andes",  contactId: "c5", value: 260000,  stage: "nuevo",       closeDate: at(42, 0) },
-      { id: "d10", title: "Cotización kits de regalo — Car Spa Viña",           contactId: "c4", value: 350000,  stage: "perdido",     closeDate: at(-22, 0) },
-      { id: "d11", title: "Capacitación avanzada aplicación cerámica — Lavaseco Ñuñoa", contactId: "c2", value: 300000, stage: "ganado", closeDate: at(-6, 0) }
-    ];
-    var raw = [
-      [-6, 10, "email",   "Envío de cotización inicial",       "c3", "d3", true],
-      [-4, 12, "llamada", "Llamada de prospección",            "c2", "d2", true],
-      [-2, 9,  "reunion", "Demo de aplicación cerámica",       "c4", "d4", true],
-      [-1, 16, "tarea",   "Preparar presupuesto mayorista",    "c7", "d6", true],
-      [0,  11, "reunion", "Reunión de seguimiento",            "c1", "d1", false],
-      [0,  15, "llamada", "Revisar condiciones de pago",       "c8", "d7", false],
-      [1,  10, "reunion", "Presentación a gerencia",           "c3", "d3", false],
-      [1,  17, "tarea",   "Enviar orden de compra",            "c8", "d7", false],
-      [2,  12, "llamada", "Cierre de negociación",             "c4", "d4", false],
-      [3,  9,  "reunion", "Capacitación de producto en taller","c6", "d5", false],
-      [4,  16, "email",   "Seguimiento de cotización",         "c7", "d6", false],
-      [6,  11, "reunion", "Revisión trimestral de compras",    "c3", null, false],
-      [8,  10, "tarea",   "Actualizar ficha en el CRM",        "c5", "d9", false]
-    ];
-    var activities = raw.map(function (r, i) {
-      return {
-        id: "a" + (i + 1), type: r[2], title: r[3], contactId: r[4], dealId: r[5],
-        datetime: at(r[0], r[1]), durationMin: r[2] === "reunion" ? 45 : 30,
-        done: r[6], googleEventId: null, notes: ""
-      };
-    });
     var employees = [
       { id: "sebastian", name: "Sebastián Fuenzalida", email: "sfuenzalidarives@gmail.com", role: "Admin Dev",
         salt: "s1", hash: hashPass("SebasDev#2026", "s1"), createdAt: now.toISOString() },
@@ -839,10 +790,10 @@
         salt: "s3", hash: hashPass("ThamaraAdm#2026", "s3"), createdAt: now.toISOString() }
     ];
     return {
-      contacts: contacts, deals: deals, activities: activities,
+      contacts: [], deals: [], activities: [],
       employees: employees, session: { employeeId: "sebastian" },
       settings: { googleClientId: "", theme: "system" },
-      isDemo: true
+      isDemo: false
     };
   }
 
@@ -1629,7 +1580,6 @@
         '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
           '<button class="btn" id="ieBtn2">Importar / exportar contactos</button>' +
           '<button class="btn" id="exportBtn">Ver copia (JSON)</button>' +
-          '<button class="btn" id="reseedBtn">Restablecer datos de ejemplo</button>' +
           '<button class="btn danger" id="wipeBtn">Borrar todo</button>' +
         '</div>' +
         '<textarea id="exportArea" hidden readonly style="width:100%;margin-top:12px;min-height:140px;font-family:var(--mono);font-size:11px;padding:10px;border:1px solid var(--border-strong);border-radius:8px;background:var(--surface-2);color:var(--ink)"></textarea>' +
@@ -1661,14 +1611,6 @@
       a.hidden = !a.hidden;
       a.value = JSON.stringify({ contacts: state.contacts, deals: state.deals, activities: state.activities }, null, 2);
       if (!a.hidden) { a.focus(); a.select(); }
-    });
-    $("#reseedBtn").addEventListener("click", function () {
-      if (!confirm("¿Restablecer todos los datos a los de ejemplo? Se perderán tus cambios.")) return;
-      var keepEmp = state.employees, keepSession = state.session;
-      state = seed();
-      state.employees = keepEmp && keepEmp.length ? keepEmp : state.employees;
-      state.session = keepSession || state.session;
-      save(); applyTheme(); refresh(); toast("Datos de ejemplo restablecidos");
     });
     $("#wipeBtn").addEventListener("click", function () {
       if (!confirm("¿Borrar todos los contactos, negocios y actividades? (Los accesos de empleados se conservan.)")) return;
